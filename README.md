@@ -1,4 +1,4 @@
-# OfficeSignature
+# Office Signature
 
 ## Se aplica a
 - Outlook

@@ -7,11 +7,11 @@
 <head>
   <title>PUCMM firma dinámica</title>
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <link href="https://alexsamboy.github.io/pucmm/src/taskpane/CSS/editsignature.css" rel="stylesheet" type="text/css" media="all" />
+  <link href="https://laramirez0310.github.io/OfficeSignature/src/taskpane/CSS/editsignature.css" rel="stylesheet" type="text/css" media="all" />
   <script type="text/javascript" src="https://appsforoffice.microsoft.com/lib/1.1/hosted/office.js"></script>
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-  <script type="text/javascript" src="https://alexsamboy.github.io/pucmm/src/utilities.js"></script>
-  <script type="text/javascript" src="https://alexsamboy.github.io/pucmm/src/taskpane/Js/taskpane_render.js"></script>
+  <script type="text/javascript" src="https://laramirez0310.github.io/OfficeSignature/src/utilities.js"></script>
+  <script type="text/javascript" src="https://laramirez0310.github.io/OfficeSignature/src/taskpane/Js/taskpane_render.js"></script>
 </head>
  
 <body>  
@@ -68,7 +68,7 @@
       redirect: 'follow'
     };
 
-    fetch("https://prod-29.westus.logic.azure.com:443/workflows/b99ce35126ee4b278be693e44ee31bf2/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=BNBlKqFf8vaViNf7nlHudzobTdzxa4n0DcgXr8oXe_c", requestOptions)
+    fetch("https://prod-79.westus.logic.azure.com:443/workflows/274b4a9f4c3c4983bf5b6e4800c6448a/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=4a0XwtuCOqmPB4-g-vy23Ph8H9SzC-pbWZQxKwUbZAM", requestOptions)
       .then(response => response.json())
       .then(result => { dataUser(result) })
       .catch(error => console.log('error', error));
