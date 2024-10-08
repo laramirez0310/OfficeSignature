@@ -56,7 +56,13 @@ function checkSignature(eventObj) {
 function insert_auto_signature(compose_type, user_info, eventObj) {
   let template_name = get_template_name(compose_type);
   let signature_info = get_signature_info(template_name, user_info);
-  addTemplateSignature(signature_info, eventObj);
+  if(savedSignature){
+    addTemplateSignature(savedSignature, eventObj);
+    console.log("Saved signature: ", savedSignature);
+  } else {
+    addTemplateSignature(signature_info, eventObj);
+    console.log("No signature found in roaming settings.");
+  }  
 }
 
 /**

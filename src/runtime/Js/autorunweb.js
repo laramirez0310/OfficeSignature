@@ -22,8 +22,10 @@ function insert_auto_signature(compose_type, user_info, eventObj) {
   } else {
       if(savedSignature){
         addTemplateSignature(savedSignature, eventObj);
+        console.log("Saved signature: ", savedSignature);
       } else {
         addTemplateSignature(signatureDetails, eventObj);
+        console.log("No signature found in roaming settings.");
       }  
   }
 }
