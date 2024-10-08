@@ -40,7 +40,7 @@ function insert_auto_signature(compose_type, user_info, eventObj) {
  */
 function set_body(signatureDetails, eventObj) {
 
-  if (is_valid_data(signatureDetails.logoBase64) === true) {
+  if (is_valid_data(signatureDetails.template_A_info.logoBase64) === true) {
     //If a base64 image was passed we need to attach it.
     Office.context.mailbox.item.addFileAttachmentFromBase64Async(
       signatureDetails.template_A_info.logoBase64,
