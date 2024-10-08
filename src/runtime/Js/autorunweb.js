@@ -43,14 +43,14 @@ function set_body(signatureDetails, eventObj) {
   if (is_valid_data(signatureDetails.logoBase64) === true) {
     //If a base64 image was passed we need to attach it.
     Office.context.mailbox.item.addFileAttachmentFromBase64Async(
-      signatureDetails.logoBase64,
+      signatureDetails.template_A_info.logoBase64,
       signatureDetails.logoFileName,
       {
         isInline: true,
       },
       function (result) { 
         Office.context.mailbox.item.body.setAsync(
-        "<br/><br/>" + signatureDetails.signature,
+        "<br/><br/>" + signatureDetails.template_A_info.signature,
         {
           coercionType: "html",
           asyncContext: eventObj,
