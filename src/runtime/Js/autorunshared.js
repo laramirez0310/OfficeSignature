@@ -56,6 +56,7 @@ function checkSignature(eventObj) {
 function insert_auto_signature(compose_type, user_info, eventObj) {
   let template_name = get_template_name(compose_type);
   let signature_info = get_signature_info(template_name, user_info);
+  let savedSignature = Office.context.roamingSettings.get("signature_A_info");
   if(savedSignature){
     addTemplateSignature(savedSignature, eventObj);
     console.log("Saved signature: ", savedSignature);
