@@ -16,13 +16,13 @@ Office.initialize = function (reason) {};
 function insert_auto_signature(compose_type, user_info, eventObj) {
   let template_name = get_template_name(compose_type);
   let signatureDetails = get_signature_info(template_name, user_info);
-  let savedSignature = Office.context.roamingSettings.get("signature_A_info");
+  let savedSignature = Office.context.roamingSettings.get("template_A_info");
   if (Office.context.mailbox.item.itemType == "appointment") {
     set_body(signatureDetails, eventObj);
   } else {
       if(savedSignature){
         addTemplateSignature(savedSignature, eventObj);
-        console.log("Saved signature web: ", savedSignature);
+        console.log("Signature found in roaming settings.");
       } else {
         addTemplateSignature(signatureDetails, eventObj);
         console.log("No signature found in roaming settings.");
