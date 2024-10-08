@@ -16,10 +16,15 @@ Office.initialize = function (reason) {};
 function insert_auto_signature(compose_type, user_info, eventObj) {
   let template_name = get_template_name(compose_type);
   let signatureDetails = get_signature_info(template_name, user_info);
+  let savedSignature = Office.context.roamingSettings.get("signature_A_info");
   if (Office.context.mailbox.item.itemType == "appointment") {
     set_body(signatureDetails, eventObj);
   } else {
-    addTemplateSignature(signatureDetails, eventObj);
+      if(savedSignature){
+        addTemplateSignature(savedSignature, eventObj);
+      } else {
+        addTemplateSignature(signatureDetails, eventObj);
+      }  
   }
 }
 
