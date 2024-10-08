@@ -21,7 +21,8 @@ function insert_auto_signature(compose_type, user_info, eventObj) {
     set_body(signatureDetails, eventObj);
   } else {
       if(savedSignature){
-        addTemplateSignature(savedSignature, eventObj);
+        let parseTemplate = JSON.parse(savedSignature);
+        addTemplateSignature(parseTemplate, eventObj);
         console.log("Signature found in roaming settings.");
       } else {
         addTemplateSignature(signatureDetails, eventObj);
@@ -40,17 +41,17 @@ function insert_auto_signature(compose_type, user_info, eventObj) {
  */
 function set_body(signatureDetails, eventObj) {
 
-  if (is_valid_data(signatureDetails.template_A_info.logoBase64) === true) {
+  if (is_valid_data(signatureDetails.logoBase64) === true) {
     //If a base64 image was passed we need to attach it.
     Office.context.mailbox.item.addFileAttachmentFromBase64Async(
-      signatureDetails.template_A_info.logoBase64,
+      signatureDetails.logoBase64,
       signatureDetails.logoFileName,
       {
         isInline: true,
       },
       function (result) { 
         Office.context.mailbox.item.body.setAsync(
-        "<br/><br/>" + signatureDetails.template_A_info.signature,
+        "<br/><br/>" + signatureDetails.signature,
         {
           coercionType: "html",
           asyncContext: eventObj,
