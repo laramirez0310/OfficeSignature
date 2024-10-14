@@ -128,7 +128,7 @@ function create_user_info()
 
   clear_message();
 
-  if (form_has_valid_data(name, email,puesto))
+  if (form_has_valid_data(name, email))
   {
     clear_message();
  
