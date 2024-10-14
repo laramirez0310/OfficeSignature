@@ -75,10 +75,10 @@ function load_saved_user_info()
     _greeting_text.val(user_info.greeting);
 
     let pronoun = user_info.pronoun;
-    if (pronoun && pronoun.length >= 3)
+    /*if (pronoun && pronoun.length >= 3)
     {
       _preferred_pronoun.val(pronoun.substring(1, pronoun.length - 1));
-    }
+    }*/
   }
 }
 
