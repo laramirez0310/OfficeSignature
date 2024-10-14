@@ -41,7 +41,7 @@ function save_signature_settings()
 	save_user_settings_to_roaming_settings();
 
 	disable_client_signatures_if_necessary();
-
+	test_template_A();
 	$("#message").show("slow");
   }
   else
