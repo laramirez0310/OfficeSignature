@@ -73,9 +73,9 @@ function load_saved_user_info()
     _job_title.val(user_info.job);
     _phone_number.val(user_info.phone);
     _greeting_text.val(user_info.greeting);
-
-    let pronoun = user_info.pronoun;
-    /*if (pronoun && pronoun.length >= 3)
+    _preferred_pronoun.val(user_info.pronoun);
+    /*let pronoun = user_info.pronoun;
+    if (pronoun && pronoun.length >= 3)
     {
       _preferred_pronoun.val(pronoun.substring(1, pronoun.length - 1));
     }*/
