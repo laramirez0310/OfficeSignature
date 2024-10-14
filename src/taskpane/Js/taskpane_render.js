@@ -74,11 +74,7 @@ function load_saved_user_info()
     _phone_number.val(user_info.phone);
     _greeting_text.val(user_info.greeting);
     _preferred_pronoun.val(user_info.pronoun);
-    /*let pronoun = user_info.pronoun;
-    if (pronoun && pronoun.length >= 3)
-    {
-      _preferred_pronoun.val(pronoun.substring(1, pronoun.length - 1));
-    }*/
+    
   }
 }
 
@@ -129,7 +125,6 @@ function create_user_info()
 {
   let name = _display_name.val().trim();
   let email = _email_id.val().trim();
-  let puesto = _job_title.val().trim();
 
   clear_message();
 
@@ -141,7 +136,7 @@ function create_user_info()
 
     user_info.name = name;
     user_info.email = email;
-    user_info.job = puesto;
+    user_info.job =  _job_title.val().trim();
     user_info.phone = _phone_number.val().trim();
     user_info.greeting = _greeting_text.val().trim();
     user_info.pronoun = _preferred_pronoun.val().trim();
