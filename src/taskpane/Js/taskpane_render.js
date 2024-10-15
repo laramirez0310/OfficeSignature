@@ -146,7 +146,7 @@ function create_user_info()
       user_info.pronoun = "" + user_info.pronoun + "";
     }
 
-    console.log(user_info);
+    //console.log(user_info);
     localStorage.setItem('user_info', JSON.stringify(user_info));
     navigate_to_taskpane_assignsignature();
   }
@@ -183,7 +183,7 @@ function clear_roaming_settings()
   (
     function (asyncResult)
     {
-      console.log("clear_roaming_settings - " + JSON.stringify(asyncResult));
+      //console.log("clear_roaming_settings - " + JSON.stringify(asyncResult));
 
       let message = "¡Todas las configuraciones se restablecieron con éxito! Este complemento no insertará ninguna firma. Puede cerrar este panel ahora.";
       if (asyncResult.status === Office.AsyncResultStatus.Failed)

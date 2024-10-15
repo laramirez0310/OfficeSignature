@@ -33,7 +33,7 @@ function lazy_init_user_info()
     }
     else
     {
-      console.log("Unable to retrieve 'user_info' from localStorage.");
+      console.log("No se encontraron datos de 'user_info' en localStorage.");
     }
   }
 }

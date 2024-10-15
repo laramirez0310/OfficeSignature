@@ -5,7 +5,7 @@ function save_user_settings_to_roaming_settings()
 {
   Office.context.roamingSettings.saveAsync(function (asyncResult)
   {
-	console.log("save_user_info_str_to_roaming_settings - " + JSON.stringify(asyncResult));
+	//console.log("save_user_info_str_to_roaming_settings - " + JSON.stringify(asyncResult));
   });
 }
 
@@ -15,7 +15,7 @@ function disable_client_signatures_if_necessary()
   {
 	Office.context.mailbox.item.disableClientSignatureAsync(function (asyncResult)
 	{
-	  console.log("disable_client_signature_if_necessary - " + JSON.stringify(asyncResult));
+	  //console.log("disable_client_signature_if_necessary - " + JSON.stringify(asyncResult));
 	});
   }
 }
@@ -64,7 +64,7 @@ function set_body(str)
 
 	function (asyncResult)
 	{
-	  console.log("set_body - " + JSON.stringify(asyncResult));
+	  //console.log("set_body - " + JSON.stringify(asyncResult));
 	}
   );
 }
@@ -81,7 +81,7 @@ function set_signature(str)
 
 	function (asyncResult)
 	{
-	  console.log("set_signature - " + JSON.stringify(asyncResult));
+	  //console.log("set_signature - " + JSON.stringify(asyncResult));
 	}
   );
 }
@@ -101,7 +101,7 @@ function insert_signature(str)
 function test_template_A()
 {
 	let str = get_template_A_str(_user_info);
-	console.log("test_template_A - " + str);
+	//console.log("test_template_A - " + str);
 
 	insert_signature(str);
 }
@@ -109,7 +109,7 @@ function test_template_A()
 function test_template_B()
 {
 	let str = get_template_B_str(_user_info);
-	console.log("test_template_B - " + str);
+	//console.log("test_template_B - " + str);
 
 	insert_signature(str);
 }
@@ -117,7 +117,7 @@ function test_template_B()
 function test_template_C()
 {
 	let str = get_template_C_str(_user_info);
-	console.log("test_template_C - " + str);
+	//console.log("test_template_C - " + str);
 
 	insert_signature(str);
 }

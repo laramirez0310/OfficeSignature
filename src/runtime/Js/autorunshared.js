@@ -59,10 +59,10 @@ function insert_auto_signature(compose_type, user_info, eventObj) {
   let savedSignature = Office.context.roamingSettings.get("template_A_info");
   if(savedSignature){
     addTemplateSignature(savedSignature, eventObj);
-    console.log("Signature found in desktop app roaming settings.");
+    //console.log("Firma encontrada en roaming settings.");
   } else {
     addTemplateSignature(signature_info, eventObj);
-    console.log("No signature found in roaming settings.");
+    //console.log("No existe firma en roaming settings.");
   }  
 }
 
@@ -209,9 +209,9 @@ function get_template_A_info(user_info) {
     Office.context.roamingSettings.set("template_A_info", JSON.stringify(template_A_Info));
     Office.context.roamingSettings.saveAsync(function (asyncResult) {
       if (asyncResult.status === Office.AsyncResultStatus.Succeeded) {
-        console.log("Signature data saved successfully.");
+       // console.log("Datos de la firma guardados satisfactoriamente.");
       } else {
-        console.log("Error saving signature data: " + asyncResult.error.message);
+       // console.log("Error guardando datos de firma: " + asyncResult.error.message);
       }
     });
   }
