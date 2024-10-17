@@ -1,10 +1,10 @@
-# Office Signature
+# Firma para los correos para Office
 
 ## Se aplica a
 - Outlook
   - Windows
-  - web browser
+  - Buscador (Google Chrome, Microsoft Edge, Mozilla Firefox)
 
-## Prerequisites
+## Prerequisitos
 
 - Microsoft 365
