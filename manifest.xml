@@ -7,7 +7,7 @@
   <Version>1.0</Version>
   <ProviderName>Microsoft</ProviderName>
   <DefaultLocale>en-us</DefaultLocale>
-  <DisplayName DefaultValue="Firma PUCMM UDAS"/>
+  <DisplayName DefaultValue="Firma PUCMM"/>
   <Description DefaultValue="Complemento para establecer firma de correo"/>
   <IconUrl DefaultValue="https://laramirez0310.github.io/OfficeSignature/assets/escudo-pucmm.svg"/>
   <HighResolutionIconUrl DefaultValue="https://laramirez0310.github.io/OfficeSignature/assets/escudo-pucmm.svg"/>
