@@ -3,7 +3,7 @@
 ## Se aplica a
 - Outlook
   - Windows
-  - Buscador (Google Chrome, Microsoft Edge, Mozilla Firefox)
+  - Buscador (Google Chrome, Microsoft Edge, Mozilla Firefox, Brave)
 
 ## Prerequisitos
 
