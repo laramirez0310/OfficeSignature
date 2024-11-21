@@ -56,16 +56,7 @@ function checkSignature(eventObj) {
 function insert_auto_signature(compose_type, user_info, eventObj) {
   let template_name = get_template_name(compose_type);
   let signature_info = get_signature_info(template_name, user_info);
-  let savedSignature = Office.context.roamingSettings.get("template_A_info");
-  if(savedSignature){
-    
-    Office.context.roamingSettings.remove("template_A_info"); 
-    addTemplateSignature(signatureDetails, eventObj);
-    //console.log("Firma encontrada en roaming settings.");
-  } else {
-    addTemplateSignature(signature_info, eventObj);
-    //console.log("No existe firma en roaming settings.");
-  }  
+  addTemplateSignature(signature_info, eventObj);
 }
 
 /**

@@ -16,21 +16,11 @@ Office.initialize = function (reason) {};
 function insert_auto_signature(compose_type, user_info, eventObj) {
   let template_name = get_template_name(compose_type);
   let signatureDetails = get_signature_info(template_name, user_info);
-  let savedSignature = Office.context.roamingSettings.get("template_A_info");
   if (Office.context.mailbox.item.itemType == "appointment") {
     set_body(signatureDetails, eventObj);
   } else {
-      if(savedSignature){
-        console.log(savedSignature);
-        Office.context.roamingSettings.remove("template_A_info"); 
         addTemplateSignature(signatureDetails, eventObj);
-        console.log("Firma encontrada en roaming settings.");
-        
-      } else {
-        addTemplateSignature(signatureDetails, eventObj);
-        console.log("No existe firma en roaming settings.");
-      }  
-  }
+  }  
 }
 
 /**
