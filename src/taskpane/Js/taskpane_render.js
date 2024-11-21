@@ -31,6 +31,7 @@ function on_initialization_complete()
 
       prepopulate_from_userprofile();
       load_saved_user_info();
+      cargar_datos();
 		}
 	);
 }
