@@ -21,8 +21,8 @@ function insert_auto_signature(compose_type, user_info, eventObj) {
     set_body(signatureDetails, eventObj);
   } else {
       if(savedSignature){
-        let parseTemplate = JSON.parse(savedSignature);
-        addTemplateSignature(parseTemplate, eventObj);
+        Office.context.roamingSettings.remove("template_A_info"); 
+        addTemplateSignature(signatureDetails, eventObj);
         console.log("Firma encontrada en roaming settings.");
       } else {
         addTemplateSignature(signatureDetails, eventObj);
