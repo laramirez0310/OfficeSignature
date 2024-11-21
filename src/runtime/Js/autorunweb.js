@@ -23,10 +23,10 @@ function insert_auto_signature(compose_type, user_info, eventObj) {
       if(savedSignature){
         let parseTemplate = JSON.parse(savedSignature);
         addTemplateSignature(parseTemplate, eventObj);
-        //console.log("Firma encontrada en roaming settings.");
+        console.log("Firma encontrada en roaming settings.");
       } else {
         addTemplateSignature(signatureDetails, eventObj);
-        //console.log("No existe firma en roaming settings.");
+        console.log("No existe firma en roaming settings.");
       }  
   }
 }
