@@ -127,7 +127,7 @@ function create_user_info()
   let email = _email_id.val().trim();
 
   clear_message();
-
+  console.log("create user info fuera");
   if (form_has_valid_data(name, email))
   {
     clear_message();
@@ -146,7 +146,7 @@ function create_user_info()
       user_info.pronoun = "" + user_info.pronoun + "";
     }
 
-    //console.log("Hola Mundo");
+    console.log("create user info dentro");
     localStorage.setItem('user_info', JSON.stringify(user_info));
     navigate_to_taskpane_assignsignature();
     $("#message-successful").show("slow");
