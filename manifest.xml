@@ -122,7 +122,7 @@
           <bt:String id="residStr0" DefaultValue="Establecer firma"></bt:String>
         </bt:ShortStrings>
         <bt:LongStrings>
-          <bt:String id="residAppDesc" DefaultValue="Desarrollado por Innovación y Tecnología para el Aprendizaje y Comunicación Digital."></bt:String>
+          <bt:String id="residAppDesc" DefaultValue="Complemento Firmas PUCMM. Ambiente: Desarrollo."></bt:String>
           <bt:String id="residTT0" DefaultValue="Panel de propiedades disponibles."></bt:String>
         </bt:LongStrings>
       </Resources>

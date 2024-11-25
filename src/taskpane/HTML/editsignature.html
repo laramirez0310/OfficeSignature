@@ -33,9 +33,15 @@
 
     <input type="text" id="phone_number" placeholder="Phone number" readonly/>
 
-    <input type="text" placeholder="Eg: Thank you," id="greeting_text" readonly style="display:none;"/>
+    <!--<input type="text" placeholder="Eg: Thank you," id="greeting_text" readonly style="display:none;"/>-->
 
     <input type="text" placeholder="Dependencia" id="preferred_pronoun" readonly />
+
+    <p id="override_sig">Sobrescribir la firma de Outlook</p>
+    <label id="label-checkbox" class="switch">
+      <input id="checkbox_sig" type="checkbox" checked>
+      <span class="slider round"></span>
+    </label>
 
     <button id="next_button_t1" class="registerbtn" onclick="create_user_info()">Guardar</button>
 <!--
