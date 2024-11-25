@@ -128,8 +128,8 @@ input[type=text]:focus, input[type=number]:focus, input[type=email]:focus {
   font-size:16px; 
   position: absolute;  
   left: 25px;
-  width: 200px;
-  text-align: left;
+  width: 500px;
+  text-align:justify;
   letter-spacing: 0px;
   color: #323130;
   opacity: 1;
