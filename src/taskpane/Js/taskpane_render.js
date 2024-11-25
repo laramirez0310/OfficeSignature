@@ -121,6 +121,7 @@ function navigate_to_taskpane_assignsignature()
   window.location.href = 'assignsignature.html';
 }
 
+
 function create_user_info()
 {
   let name = _display_name.val().trim();
