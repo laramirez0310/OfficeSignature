@@ -30,7 +30,6 @@ function on_initialization_complete()
       _message = $("p#message");
 
       prepopulate_from_userprofile();
-      //load_saved_user_info();
       cargar_datos();
 		}
 	);
@@ -150,6 +149,7 @@ function create_user_info()
     //console.log(user_info);
     localStorage.setItem('user_info', JSON.stringify(user_info));
     navigate_to_taskpane_assignsignature();
+    //save_signature_settings();
   }
 }
 

@@ -19,9 +19,9 @@ function insert_auto_signature(compose_type, user_info, eventObj) {
   if (Office.context.mailbox.item.itemType == "appointment") {
     set_body(signatureDetails, eventObj);
   } else {
-        addTemplateSignature(signatureDetails, eventObj);
+      addTemplateSignature(signatureDetails, eventObj);
   }  
-}
+  }
 
 /**
  * For Outlook on the seb, set signature for current appointment
