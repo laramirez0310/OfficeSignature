@@ -146,9 +146,10 @@ function create_user_info()
       user_info.pronoun = "" + user_info.pronoun + "";
     }
 
-    //console.log(user_info);
+    //console.log("Hola Mundo");
     localStorage.setItem('user_info', JSON.stringify(user_info));
     navigate_to_taskpane_assignsignature();
+    $("#message-successful").show("slow");
     //save_signature_settings();
   }
 }
