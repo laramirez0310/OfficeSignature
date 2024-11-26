@@ -30,7 +30,8 @@ function on_initialization_complete()
       _message = $("p#message");
 
       prepopulate_from_userprofile();
-      cargar_datos();
+      load_saved_user_info();
+      //cargar_datos();
 		}
 	);
 }
