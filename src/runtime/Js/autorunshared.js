@@ -176,7 +176,7 @@ function get_template_A_info(user_info) {
     str += user_info.greeting + "<br/>";
   }
 
-  str +='<table border="0" cellpadding="3" cellspacing="3"><tbody><tr><td valign="top"><font size="3" color="#17365d" face="Arial">';
+  str +='<table border="0" cellpadding="1" cellspacing="1"><tbody><tr><td valign="top"><font size="3" color="#17365d" face="Arial">';
   str +='<strong>'+ user_info.name +'</strong></font>';
   str +='<br><font size="2" face="Arial">'+ user_info.job +'</font><br>';
   str +='<font size="3" color="#17365d" face="Arial">';
