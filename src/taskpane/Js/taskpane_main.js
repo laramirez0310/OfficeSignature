@@ -103,11 +103,13 @@ function insert_signature(str)
 function test_template_A()
 {
 	console.log("antes de get_template_A_str");
-	let str = get_template_A_str(_user_info);
+	//let str = get_template_A_str(_user_info);
+	let str = prueba_plantilla_str(_user_info);
 	console.log("test_template_A - " + str);
 
 	insert_signature(str);
 }
+
 
 function test_template_B()
 {
