@@ -179,7 +179,7 @@ function get_template_A_info(user_info) {
   str +='<table border="0" cellpadding="5" cellspacing="5"><tbody><tr><td valign="top"><font size="3" color="#17365d" face="Arial">';
   //str +='<strong>'+ user_info.name +'</strong></font>';
   str +='<strong> Pepito </strong></font>';
-  str +='<br><font size="2" face="Arial">'+ user_info.job +'</font><br>';
+  str +='<br><font size="20" face="Arial">'+ user_info.job +'</font><br>';
   str +='<font size="3" color="#17365d" face="Arial">';
   str += is_valid_data(user_info.pronoun) ? "<strong>" + user_info.pronoun : "";
   str += '</strong></font><br><font size="2" face="Arial">Tel.:';
