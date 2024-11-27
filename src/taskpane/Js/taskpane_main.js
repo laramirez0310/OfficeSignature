@@ -7,7 +7,7 @@ function save_user_settings_to_roaming_settings()
 {
   Office.context.roamingSettings.saveAsync(function (asyncResult)
   {
-	//console.log("save_user_info_str_to_roaming_settings - " + JSON.stringify(asyncResult));
+	console.log("save_user_info_str_to_roaming_settings - " + JSON.stringify(asyncResult));
   });
 }
 
