@@ -116,11 +116,7 @@ function form_has_valid_data(name, email)
 
   return true;
 }
- 
-function navigate_to_taskpane_assignsignature()
-{
-  window.location.href = 'assignsignature.html';
-}
+
 
 
 function create_user_info()
@@ -153,55 +149,4 @@ function create_user_info()
     //navigate_to_taskpane_assignsignature();
     save_signature_settings();
   }
-}
-
-function clear_all_fields()
-{
-  _display_name.val("");
-  _email_id.val("");
-  _job_title.val("");
-  _phone_number.val("");
-  _greeting_text.val("");
-  _preferred_pronoun.val("");
-}
-
-function clear_all_localstorage_data()
-{
-  localStorage.removeItem('user_info');
-  localStorage.removeItem('newMail');
-  localStorage.removeItem('reply');
-  localStorage.removeItem('forward');
-  localStorage.removeItem('override_olk_signature');
-}
-
-function clear_roaming_settings()
-{
-  Office.context.roamingSettings.remove('user_info');
-  Office.context.roamingSettings.remove('newMail');
-  Office.context.roamingSettings.remove('reply');
-  Office.context.roamingSettings.remove('forward');
-  Office.context.roamingSettings.remove('override_olk_signature');
-
-  Office.context.roamingSettings.saveAsync
-  (
-    function (asyncResult)
-    {
-      //console.log("clear_roaming_settings - " + JSON.stringify(asyncResult));
-
-      let message = "¡Todas las configuraciones se restablecieron con éxito! Este complemento no insertará ninguna firma. Puede cerrar este panel ahora.";
-      if (asyncResult.status === Office.AsyncResultStatus.Failed)
-      {
-        message = "No se pudo restablecer. Inténtalo de nuevo.";
-      }
-
-      display_message(message);
-    }
-  );
-}
-
-function reset_all_configuration()
-{
-  clear_all_fields();
-  clear_all_localstorage_data();
-  clear_roaming_settings();
 }
