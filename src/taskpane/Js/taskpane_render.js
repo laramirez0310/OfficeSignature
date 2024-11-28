@@ -1,6 +1,8 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
+import { save_signature_settings } from "./taskpane_main";
+
 let _display_name;
 let _job_title;
 let _phone_number;
