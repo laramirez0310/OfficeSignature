@@ -212,7 +212,7 @@ function get_command_id() {
   };
 }
 
-export {get_template_A_info};
+//export {get_template_A_info};
 
 /**
  * Gets HTML string for template B

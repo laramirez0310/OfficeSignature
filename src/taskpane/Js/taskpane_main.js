@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
-import {get_template_A_info} from '../../runtime/Js/autorunshared.js';
+//import {get_template_A_info} from '../../runtime/Js/autorunshared.js';
 
 let _user_info;
 
@@ -54,7 +54,7 @@ function save_signature_settings()
   }
 }
 
-export {save_signature_settings}; 
+//export {save_signature_settings}; 
 
 function set_body(str)
 {
@@ -105,9 +105,9 @@ function insert_signature(str)
 function test_template_A()
 {
 	console.log("antes de get_template_A_str");
-	//let str = get_template_A_str(_user_info);
-	let str = get_template_A_info(_user_info);
-	console.log("test_template_A_info - " + str);
+	let str = get_template_A_str(_user_info);
+	//let str = get_template_A_info(_user_info);
+	console.log("test_template_A_str - " + str);
 
 	insert_signature(str);
 }
