@@ -212,6 +212,7 @@ function get_template_A_info(user_info) {
   };
 }
 
+export{get_template_A_info};
 
 /**
  * Gets HTML string for template B

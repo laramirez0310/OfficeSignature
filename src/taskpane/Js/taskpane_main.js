@@ -1,6 +1,8 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
+import {get_template_A_info} from '../../runtime/Js/autorunshared';
+
 let _user_info;
 
 function save_user_settings_to_roaming_settings()
