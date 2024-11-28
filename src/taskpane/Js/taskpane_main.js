@@ -24,7 +24,7 @@ function disable_client_signatures_if_necessary()
   }
 }
 
-function save_signature_settings()
+export function save_signature_settings()
 {
   let user_info_str = localStorage.getItem('user_info');
 
@@ -54,7 +54,6 @@ function save_signature_settings()
   }
 }
 
-export{save_signature_settings};
 
 
 function set_body(str)

@@ -169,7 +169,7 @@ function get_command_id() {
     "logoFileName": The filename of the logo image
  */
 
-function get_template_A_info(user_info) {
+export function get_template_A_info(user_info) {
   const logoFileName = "marca-pucmm.jpg";
   let str = "";
   if (is_valid_data(user_info.greeting)) {
@@ -212,7 +212,6 @@ function get_template_A_info(user_info) {
   };
 }
 
-export{get_template_A_info};
 
 /**
  * Gets HTML string for template B
