@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
-//import { save_signature_settings } from "./taskpane_main.js";
+import { save_signature_settings } from "./taskpane_main.js";
 
 let _display_name;
 let _job_title;

@@ -54,7 +54,7 @@ function save_signature_settings()
   }
 }
 
-//export {save_signature_settings}; 
+export {save_signature_settings}; 
 
 function set_body(str)
 {
