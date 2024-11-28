@@ -1,7 +1,7 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
-import {get_template_A_info} from '../../runtime/Js/autorunshared';
+import {get_template_A_info} from '../../runtime/Js/autorunshared.js';
 
 let _user_info;
 
@@ -24,7 +24,7 @@ function disable_client_signatures_if_necessary()
   }
 }
 
-export function save_signature_settings()
+function save_signature_settings()
 {
   let user_info_str = localStorage.getItem('user_info');
 
@@ -54,7 +54,7 @@ export function save_signature_settings()
   }
 }
 
-
+//export {save_signature_settings}; 
 
 function set_body(str)
 {
