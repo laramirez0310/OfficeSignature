@@ -8,6 +8,7 @@ let _job_title;
 let _phone_number;
 let _email_id;
 let _greeting_text;
+let _pruebaurl;
 let _preferred_pronoun;
 let _message;
 
@@ -28,6 +29,7 @@ function on_initialization_complete()
       _job_title = $("input#job_title");
       _phone_number = $("input#phone_number");
       _greeting_text = $("input#greeting_text");
+      _pruebaurl = $("input#pruebaurl");
       _preferred_pronoun = $("input#preferred_pronoun");
       _message = $("p#message");
 
@@ -76,6 +78,7 @@ function load_saved_user_info()
     _job_title.val(user_info.job);
     _phone_number.val(user_info.phone);
     _greeting_text.val(user_info.greeting);
+    _pruebaurl.val(user_info.pruebaurl);
     _preferred_pronoun.val(user_info.pronoun);
     
   }
@@ -140,6 +143,7 @@ function create_user_info()
     user_info.phone = _phone_number.val().trim();
     //user_info.greeting = _greeting_text.val().trim();
     user_info.pronoun = _preferred_pronoun.val().trim();
+    user_info.pruebaurl = _pruebaurl.val().trim();
 
     if (user_info.pronoun !== "")
     {
