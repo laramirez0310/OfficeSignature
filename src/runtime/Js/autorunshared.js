@@ -188,7 +188,9 @@ function get_command_id() {
   str += '</strong></font><br><font size="2" face="Arial">Tel.:';
   str += is_valid_data(user_info.phone) ? user_info.phone + "<br/>" : "";
   str += user_info.email;
+  str += '<br/>';
   str += user_info.pruebaurl;
+  str += '<br/>';
   str +='</font></td></tr><tr><td><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="240" height="81">';
   str +='<a href="https://pucmm.edu.do/"><img src="https://www.pucmm.edu.do/PublishingImages/firma-addin/marca-pucmm.jpg" width="258" height="87" alt="Pontificia Universidad Católica Madre y Maestra"></a></td><td width="15"></td>';
   str +='<td style="padding:0 0 0 15px;border-left-style:solid;border-left-width:1pt;border-left-color:#7f7f7f">';
