@@ -34,7 +34,7 @@ function on_initialization_complete()
       _message = $("p#message");
 
       prepopulate_from_userprofile();
-      //load_saved_user_info();
+      load_saved_user_info();
       cargar_datos();
 		}
 	);
@@ -73,13 +73,13 @@ function load_saved_user_info()
   {
     const user_info = JSON.parse(user_info_str);
 
-    _display_name.val(user_info.name);
+    /*_display_name.val(user_info.name);
     _email_id.val(user_info.email);
     _job_title.val(user_info.job);
-    _phone_number.val(user_info.phone);
-    _greeting_text.val(user_info.greeting);
+    _phone_number.val(user_info.phone);*/
+    //_greeting_text.val(user_info.greeting);
     _pruebaurl.val(user_info.pruebaurl);
-    _preferred_pronoun.val(user_info.pronoun);
+    //_preferred_pronoun.val(user_info.pronoun);
     
   }
 }

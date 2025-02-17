@@ -9,10 +9,6 @@ function get_template_A_str(user_info)
     str += user_info.greeting + "<br/>";
   }
 
-  if (is_valid_data(user_info.pruebaurl)) {
-    str += user_info.pruebaurl + "<br/>";
-  }
-
   str +='<table border="0" cellpadding="1" cellspacing="1"><tbody><tr><td valign="top"><font size="3" color="#17365d" face="Arial">';
   str +='<strong>'+ user_info.name +'</strong></font>';
   str +='<br><font size="2" face="Arial">'+ user_info.job +'</font><br>';
@@ -22,7 +18,7 @@ function get_template_A_str(user_info)
   str += is_valid_data(user_info.phone) ? user_info.phone + "<br/>" : "";
   str += user_info.email;
   str += '<br/>';
-  str += user_info.pruebaurl;
+  str += is_valid_data(user_info.pruebaurl) ? user_info.pruebaurl + "<br/>" : "";
   str += '<br/>';
   str +='</font></td></tr><tr><td><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="240" height="81">';
   str +='<a href="https://pucmm.edu.do/"><img src="https://www.pucmm.edu.do/PublishingImages/firma-addin/marca-pucmm.jpg" width="258" height="87" alt="Pontificia Universidad Católica Madre y Maestra"></a></td><td width="15"></td>';
