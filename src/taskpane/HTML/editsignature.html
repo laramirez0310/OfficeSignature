@@ -64,8 +64,8 @@
 
   function cargar_datos() {
 
-    correo2 = document.querySelector('#email_id').value;
-    console.log('funcionando: ' + 'correo1: ' + correo1 + 'correo2:'+ correo2 /*+ correo + cargo + tel + unidad*/);
+    correo = document.querySelector('#email_id').value;
+    console.log('funcionando: ' + correo /*+ correo + cargo + tel + unidad*/);
 
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -81,10 +81,21 @@
       redirect: 'follow'
     };
 
-    fetch("https://prod-79.westus.logic.azure.com:443/workflows/274b4a9f4c3c4983bf5b6e4800c6448a/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=4a0XwtuCOqmPB4-g-vy23Ph8H9SzC-pbWZQxKwUbZAM", requestOptions)
+    if (correo.split('@')[1] == 'pucmm.edu.do') {
+      console.log('soy administrativo');
+      fetch("https://prod-79.westus.logic.azure.com:443/workflows/274b4a9f4c3c4983bf5b6e4800c6448a/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=4a0XwtuCOqmPB4-g-vy23Ph8H9SzC-pbWZQxKwUbZAM", requestOptions)
+        .then(response => response.json())
+        .then(result => { dataUser(result) })
+        .catch(error => console.log('error', error));
+    } else {
+      console.log('soy academico');
+      fetch("https://prod-154.westus.logic.azure.com:443/workflows/e40a1dcc2daa4f1aa0c993cc17c45f4b/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=IzABko6qePp2xKfj-8xRPQFo2n2pdE5ML6rovdg4aTc", requestOptions)
       .then(response => response.json())
       .then(result => { dataUser(result) })
       .catch(error => console.log('error', error));
+    }
+
+    
   }
 
   function dataUser(datos) {
