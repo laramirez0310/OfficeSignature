@@ -56,7 +56,7 @@
 
 </body>
 <script>
-  var correo = document.querySelector('#email_id');
+  var correo1 = document.querySelector('#email_id');
   var nombre = document.querySelector('#display_name');  
   var cargo = document.querySelector('#job_title');
   var tel = document.querySelector('#phone_number');
@@ -64,8 +64,8 @@
 
   function cargar_datos() {
 
-    correo = document.querySelector('#email_id').value;
-   // console.log('funcionando ' + nombre + correo + cargo + tel + unidad);
+    correo2 = document.querySelector('#email_id').value;
+    console.log('funcionando: ' + 'correo1: ' + correo1 + 'correo2:'+ correo2 /*+ correo + cargo + tel + unidad*/);
 
     var myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
