@@ -11,8 +11,6 @@ let _greeting_text;
 let _InfoAd1;
 let _InfoAd2;
 let _InfoAd3;
-let _tipourl;
-let _tipourl2;
 let _preferred_pronoun;
 let _message;
 
@@ -33,8 +31,8 @@ function on_initialization_complete()
       _job_title = $("input#job_title");
       _phone_number = $("input#phone_number");
       _greeting_text = $("input#greeting_text");
+      _InfoAd1 = $("input#InfoAd1");
       _InfoAd2 = $("input#InfoAd2");
-      _tipourl = $("select#tipourl");
       _InfoAd3 = $("input#InfoAd3");
       _preferred_pronoun = $("input#preferred_pronoun");
       _message = $("p#message");
@@ -154,7 +152,6 @@ function create_user_info()
     user_info.InfoAd1 = _InfoAd1.val().trim();
     user_info.InfoAd2 = _InfoAd2.val().trim();
     user_info.InfoAd3 = _InfoAd3.val().trim();
-    user_info.tipourl = _tipourl.val().trim();
 
     if (user_info.pronoun !== "")
     {
