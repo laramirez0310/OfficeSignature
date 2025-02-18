@@ -18,7 +18,7 @@ function get_template_A_str(user_info)
   str += is_valid_data(user_info.phone) ? user_info.phone + "<br/>" : "";
   str += user_info.email;
   str += '<br/>';
-  str += is_valid_data(user_info.InfoAd1) ? (user_info.InfoAd1.startsWith('http') ? '<a href="' + user_info.InfoAd1 + '">' + user_info.InfoAd1 + '</a><br/>' : '<br style="line-height: 10px" /><p>' + user_info.InfoAd1 + '</p>') : "";
+  str += is_valid_data(user_info.InfoAd1) ? (user_info.InfoAd1.startsWith('http') ? '<a href="' + user_info.InfoAd1 + '">' + user_info.InfoAd1 + '</a><br/>' : '<p>' + user_info.InfoAd1 + '</p>') : "";
   str += is_valid_data(user_info.InfoAd2) ? (user_info.InfoAd2.startsWith('http') ? '<a href="' + user_info.InfoAd2 + '">' + user_info.InfoAd2 + '</a><br/>' : '<p>' + user_info.InfoAd2 + '</p>') : "";
   str += is_valid_data(user_info.InfoAd3) ? (user_info.InfoAd3.startsWith('http') ? '<a href="' + user_info.InfoAd3 + '">' + user_info.InfoAd3 + '</a><br/>' : '<p>' + user_info.InfoAd3 + '</p>') : "";
   str +='</font></td></tr><tr><td><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="240" height="81">';
