@@ -8,9 +8,10 @@ let _job_title;
 let _phone_number;
 let _email_id;
 let _greeting_text;
-let _pruebaurl;
+let _InfoAd1;
+let _InfoAd2;
+let _InfoAd3;
 let _tipourl;
-let _pruebaurl2;
 let _tipourl2;
 let _preferred_pronoun;
 let _message;
@@ -32,9 +33,9 @@ function on_initialization_complete()
       _job_title = $("input#job_title");
       _phone_number = $("input#phone_number");
       _greeting_text = $("input#greeting_text");
-      _pruebaurl = $("input#pruebaurl");
+      _InfoAd2 = $("input#InfoAd2");
       _tipourl = $("select#tipourl");
-      _pruebaurl2 = $("input#pruebaurl2");
+      _InfoAd3 = $("input#InfoAd3");
       _preferred_pronoun = $("input#preferred_pronoun");
       _message = $("p#message");
 
@@ -83,9 +84,9 @@ function load_saved_user_info()
     _job_title.val(user_info.job);
     _phone_number.val(user_info.phone);*/
     //_greeting_text.val(user_info.greeting);
-    _pruebaurl.val(user_info.pruebaurl);
-    _pruebaurl2.val(user_info.pruebaurl2);
-    _tipourl.val(user_info.tipourl);
+    _InfoAd1.val(user_info.InfoAd1);
+    _InfoAd2.val(user_info.InfoAd2);
+    _InfoAd3.val(user_info.InfoAd3);
     //_preferred_pronoun.val(user_info.pronoun);
     
   }
@@ -150,8 +151,9 @@ function create_user_info()
     user_info.phone = _phone_number.val().trim();
     //user_info.greeting = _greeting_text.val().trim();
     user_info.pronoun = _preferred_pronoun.val().trim();
-    user_info.pruebaurl = _pruebaurl.val().trim();
-    user_info.pruebaurl2 = _pruebaurl2.val().trim();
+    user_info.InfoAd1 = _InfoAd1.val().trim();
+    user_info.InfoAd2 = _InfoAd2.val().trim();
+    user_info.InfoAd3 = _InfoAd3.val().trim();
     user_info.tipourl = _tipourl.val().trim();
 
     if (user_info.pronoun !== "")

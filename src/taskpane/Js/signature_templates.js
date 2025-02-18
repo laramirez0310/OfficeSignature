@@ -18,8 +18,9 @@ function get_template_A_str(user_info)
   str += is_valid_data(user_info.phone) ? user_info.phone + "<br/>" : "";
   str += user_info.email;
   str += '<br/>';
-  str += is_valid_data(user_info.pruebaurl) ? '<a href="' + user_info.pruebaurl + '">' + user_info.pruebaurl + '</a><br/>' : "";
-  str += is_valid_data(user_info.pruebaurl2) ? '<a href="' + user_info.pruebaurl2 + '"> LinkedIn </a><br/>' : "";
+  str += is_valid_data(user_info.InfoAd1) ? '<p>' + user_info.InfoAd2 + '</p><br/>' : "";
+  str += is_valid_data(user_info.InfoAd2) ? '<a href="' + user_info.InfoAd2 + '">' + user_info.InfoAd2 + '</a><br/>' : "";
+  str += is_valid_data(user_info.InfoAd3) ? '<a href="' + user_info.InfoAd3 + '">' + user_info.InfoAd3 + '</a><br/>' : "";
   str +='</font></td></tr><tr><td><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="240" height="81">';
   str +='<a href="https://pucmm.edu.do/"><img src="https://www.pucmm.edu.do/PublishingImages/firma-addin/marca-pucmm.jpg" width="258" height="87" alt="Pontificia Universidad Católica Madre y Maestra"></a></td><td width="15"></td>';
   str +='<td style="padding:0 0 0 15px;border-left-style:solid;border-left-width:1pt;border-left-color:#7f7f7f">';
