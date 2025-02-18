@@ -9,7 +9,9 @@ let _phone_number;
 let _email_id;
 let _greeting_text;
 let _pruebaurl;
+let _tipourl;
 let _pruebaurl2;
+let _tipourl2;
 let _preferred_pronoun;
 let _message;
 
@@ -31,6 +33,7 @@ function on_initialization_complete()
       _phone_number = $("input#phone_number");
       _greeting_text = $("input#greeting_text");
       _pruebaurl = $("input#pruebaurl");
+      _tipourl = $("select#tipourl");
       _pruebaurl2 = $("input#pruebaurl2");
       _preferred_pronoun = $("input#preferred_pronoun");
       _message = $("p#message");
@@ -82,6 +85,7 @@ function load_saved_user_info()
     //_greeting_text.val(user_info.greeting);
     _pruebaurl.val(user_info.pruebaurl);
     _pruebaurl2.val(user_info.pruebaurl2);
+    _tipourl.val(user_info.tipourl);
     //_preferred_pronoun.val(user_info.pronoun);
     
   }
@@ -148,6 +152,7 @@ function create_user_info()
     user_info.pronoun = _preferred_pronoun.val().trim();
     user_info.pruebaurl = _pruebaurl.val().trim();
     user_info.pruebaurl2 = _pruebaurl2.val().trim();
+    user_info.tipourl = _tipourl.val().trim();
 
     if (user_info.pronoun !== "")
     {
