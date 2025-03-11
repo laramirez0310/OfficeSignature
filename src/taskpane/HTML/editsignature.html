@@ -39,11 +39,11 @@
     <!--<input type="text" placeholder="Prueba URL" id="greeting_text" readonly />-->
     <h3 style="font-family: Arial, Helvetica, sans-serif;">Información adicional:</h3>
 
-    <input type="text" placeholder="Información Adicional" id="InfoAd1">
+    <input type="text" placeholder="Información Adicional" id="InfoAd1" readonly />
 
-    <input type="text" placeholder="Información Adicional" id="InfoAd2" />
+    <input type="text" placeholder="Información Adicional" id="InfoAd2" readonly />
 
-    <input type="text" placeholder="Información Adicional" id="InfoAd3" />
+    <input type="text" placeholder="Información Adicional" id="InfoAd3" readonly />
 
     <!--<p style = "position:relative; left: 0px; top:35.5px;"> Sobrescribir la firma de Outlook</p>-->
     <p style = "position:relative; left: 0px; top:35.5px; font-family: Arial, Helvetica, sans-serif;"> Ambiente: desarrollo </p>
@@ -68,6 +68,9 @@
   var cargo = document.querySelector('#job_title');
   var tel = document.querySelector('#phone_number');
   var unidad = document.querySelector('#preferred_pronoun');
+  var InfoAd1 = document.querySelector('#InfoAd1');
+  var InfoAd2 = document.querySelector('#InfoAd2');
+  var InfoAd3 = document.querySelector('#InfoAd3');
 
   function cargar_datos() {
 
@@ -90,7 +93,8 @@
 
     if (correo.split('@')[1] == 'pucmm.edu.do') {
       console.log('soy administrativo');
-      fetch("https://prod-79.westus.logic.azure.com:443/workflows/274b4a9f4c3c4983bf5b6e4800c6448a/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=4a0XwtuCOqmPB4-g-vy23Ph8H9SzC-pbWZQxKwUbZAM", requestOptions)
+      //fetch("https://prod-79.westus.logic.azure.com:443/workflows/274b4a9f4c3c4983bf5b6e4800c6448a/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=4a0XwtuCOqmPB4-g-vy23Ph8H9SzC-pbWZQxKwUbZAM", requestOptions)
+      fetch("https://prod-06.westus.logic.azure.com:443/workflows/b3fca9c7e1914b7da3b13e5a8b48e725/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Nvf1IaJYzI7feUBxMSNiW1ypGKuyvOQ7q19-FgRhyfY", requestOptions)
         .then(response => response.json())
         .then(result => { dataUser(result) })
         .catch(error => console.log('error', error));
@@ -117,6 +121,9 @@
       }
       
       unidad.value = datos.department;
+      InfoAd1.value = datos.InfoAd1;
+      InfoAd2.value = datos.InfoAd2;
+      InfoAd3.value = datos.InfoAd3;
     }
   
 </script>
