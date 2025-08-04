@@ -63,28 +63,28 @@
 
 </body>
 <script>
-  var correo = document.querySelector('#email_id');
-  var nombre = document.querySelector('#display_name');  
-  var cargo = document.querySelector('#job_title');
-  var tel = document.querySelector('#phone_number');
-  var unidad = document.querySelector('#preferred_pronoun');
-  var InfoAd1 = document.querySelector('#InfoAd1');
-  var InfoAd2 = document.querySelector('#InfoAd2');
-  var InfoAd3 = document.querySelector('#InfoAd3');
+  let correo = document.querySelector('#email_id');
+  let nombre = document.querySelector('#display_name');  
+  let cargo = document.querySelector('#job_title');
+  let tel = document.querySelector('#phone_number');
+  let unidad = document.querySelector('#preferred_pronoun');
+  let InfoAd1 = document.querySelector('#InfoAd1');
+  let InfoAd2 = document.querySelector('#InfoAd2');
+  let InfoAd3 = document.querySelector('#InfoAd3');
 
   function cargar_datos() {
 
     correo = document.querySelector('#email_id').value;
     console.log('funcionando: ' + correo /*+ correo + cargo + tel + unidad*/);
 
-    var myHeaders = new Headers();
+    let myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
 
-    var raw = JSON.stringify({
+    let raw = JSON.stringify({
       "email": correo
     });
 
-    var requestOptions = {
+    let requestOptions = {
       method: 'POST',
       headers: myHeaders,
       body: raw,

@@ -54,9 +54,9 @@ function prepopulate_from_userprofile()
   _phone_number.val(Office.context.MailboxEnums.EntityType.PhoneNumber);*/
  
 }
-var item = Office.context.mailbox.item;
+let item = Office.context.mailbox.item;
 // Get an array of strings that represent contacts in the current item's body.
-var contacts = item.getEntitiesByType(Office.MailboxEnums.EntityType.Contact);
+let contacts = item.getEntitiesByType(Office.MailboxEnums.EntityType.Contact);
 console.log("There are " + contacts.length + " contacts.")
 contacts.forEach(function (contact) {
     console.log("Person name: " + JSON.stringify(contact.personName));
