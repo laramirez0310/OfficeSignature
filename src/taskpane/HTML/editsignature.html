@@ -90,22 +90,10 @@
       body: raw,
       redirect: 'follow'
     };
-
-    if (correo.split('@')[1] == 'pucmm.edu.do') {
-      console.log('soy administrativo');
-      //fetch("https://prod-79.westus.logic.azure.com:443/workflows/274b4a9f4c3c4983bf5b6e4800c6448a/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=4a0XwtuCOqmPB4-g-vy23Ph8H9SzC-pbWZQxKwUbZAM", requestOptions)
-      fetch("https://prod-06.westus.logic.azure.com:443/workflows/b3fca9c7e1914b7da3b13e5a8b48e725/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=Nvf1IaJYzI7feUBxMSNiW1ypGKuyvOQ7q19-FgRhyfY", requestOptions)
+      fetch("https://default73c9a419863d4226a83f7a200ad69b.e9.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/b3fca9c7e1914b7da3b13e5a8b48e725/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=O8m_jD2mbYieLNTqpOgelWzWz5BF6nQyM3b4E_mnYuA", requestOptions)
         .then(response => response.json())
         .then(result => { dataUser(result) })
         .catch(error => console.log('error', error));
-    } else {
-      console.log('soy academico');
-      fetch("https://prod-154.westus.logic.azure.com:443/workflows/e40a1dcc2daa4f1aa0c993cc17c45f4b/triggers/manual/paths/invoke?api-version=2016-06-01&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=IzABko6qePp2xKfj-8xRPQFo2n2pdE5ML6rovdg4aTc", requestOptions)
-      .then(response => response.json())
-      .then(result => { dataUser(result) })
-      .catch(error => console.log('error', error));
-    }
-
     
   }
 
