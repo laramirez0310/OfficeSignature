@@ -184,7 +184,6 @@ function get_command_id() {
   str += '</strong></font><br><font size="2" face="Arial">Tel.:';
   str += is_valid_data(user_info.phone) ? user_info.phone + "<br/>" : "";
   str += user_info.email;
-  str += '<br/>';
   str += is_valid_data(user_info.InfoAd1) ? (user_info.InfoAd1.startsWith('http') ? '<a href="' + user_info.InfoAd1 + '">' + user_info.InfoAd1 + '</a><br/>' : '<p>' + user_info.InfoAd1 + '</p>') : "";
   str += is_valid_data(user_info.InfoAd2) ? (user_info.InfoAd2.startsWith('http') ? '<a href="' + user_info.InfoAd2 + '">' + user_info.InfoAd2 + '</a><br/>' : '<p>' + user_info.InfoAd2 + '</p>') : "";
   str += is_valid_data(user_info.InfoAd3) ? (user_info.InfoAd3.startsWith('http') ? '<a href="' + user_info.InfoAd3 + '">' + user_info.InfoAd3 + '</a><br/>' : '<p>' + user_info.InfoAd3 + '</p>') : "";
