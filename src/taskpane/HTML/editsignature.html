@@ -37,14 +37,16 @@
     <input type="text" placeholder="Dependencia" id="preferred_pronoun" readonly />
 
     <!--<input type="text" placeholder="Prueba URL" id="greeting_text" readonly />-->
-    <h3 style="font-family: Arial, Helvetica, sans-serif;">Información adicional:</h3>
+    <div style="border: 1px solid #b80d0d; padding: 10px; margin-top: 20px; display: none;"  id="dvInfoAdicional">
 
-    <input type="text" placeholder="Información Adicional" id="InfoAd1" readonly />
+      <h3 style="font-family: Arial, Helvetica, sans-serif;">Información adicional:</h3>
 
-    <input type="text" placeholder="Información Adicional" id="InfoAd2" readonly />
+      <input type="text" placeholder="Información Adicional" id="InfoAd1" readonly />
 
-    <input type="text" placeholder="Información Adicional" id="InfoAd3" readonly />
+      <input type="text" placeholder="Información Adicional" id="InfoAd2" readonly />
 
+      <input type="text" placeholder="Información Adicional" id="InfoAd3" readonly />
+    </div>
     <!--<p style = "position:relative; left: 0px; top:35.5px;"> Sobrescribir la firma de Outlook</p>-->
     <p style = "position:relative; left: 0px; top:35.5px; font-family: Arial, Helvetica, sans-serif;"> Ambiente: desarrollo </p>
     <label id="label-checkbox" class="switch">
@@ -113,6 +115,21 @@
       InfoAd2.value = datos.DatoAd2;
       InfoAd3.value = datos.DatoAd3;
     }
+
+    function div_datos_adicionales(){
+      let divInfoAdicional = document.querySelector('#dvInfoAdicional');
+      if(InfoAd1.value == '' && InfoAd2.value == '' && InfoAd3.value == '')
+      {
+        divInfoAdicional.style.display = 'none';
+      }else{
+        divInfoAdicional.style.display = 'block';
+
+      }
+    }
+
+   window.onload = function() {
+    div_datos_adicionales
+   };
   
 </script>
 </html>
