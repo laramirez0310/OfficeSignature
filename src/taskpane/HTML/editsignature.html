@@ -118,7 +118,7 @@
 
     function div_datos_adicionales(){
       let divInfoAdicional = document.querySelector('#dvInfoAdicional');
-      if(InfoAd1.value == '' && InfoAd2.value == '' && InfoAd3.value == '')
+      if(InfoAd1.value == '' || InfoAd2.value == '' || InfoAd3.value == '')
       {
         divInfoAdicional.style.display = 'none';
       }else{
