@@ -100,6 +100,7 @@
   }
 
   function dataUser(datos) {
+      let divInfoAdicional = document.querySelector('#dvInfoAdicional');
       nombre.value = datos.name;
       cargo.value = datos.jobtitle;
       if(datos.phone[0]== null || datos.phone[0].trim() == '')
@@ -115,7 +116,13 @@
       InfoAd2.value = datos.DatoAd2;
       InfoAd3.value = datos.DatoAd3;
 
-      div_datos_adicionales();
+      if(InfoAd1.value.trim() != '' || InfoAd2.value.trim() != '' || InfoAd3.value.trim() != ''){
+        divInfoAdicional.style.display = 'block';
+      }else{
+        divInfoAdicional.style.display = 'none';
+      }
+
+      //div_datos_adicionales();
     }
 
     function div_datos_adicionales(){
