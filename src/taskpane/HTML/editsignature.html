@@ -37,7 +37,7 @@
     <input type="text" placeholder="Dependencia" id="preferred_pronoun" readonly />
 
     <!--<input type="text" placeholder="Prueba URL" id="greeting_text" readonly />-->
-    <div style="border: 1px solid #b80d0d; padding: 10px; margin-top: 20px;"  id="dvInfoAdicional">
+    <div id="dvInfoAdicional">
 
       <h3 style="font-family: Arial, Helvetica, sans-serif;">Información adicional:</h3>
 
@@ -114,6 +114,8 @@
       InfoAd1.value = datos.DatoAd1;
       InfoAd2.value = datos.DatoAd2;
       InfoAd3.value = datos.DatoAd3;
+
+      div_datos_adicionales();
     }
 
     function div_datos_adicionales(){
@@ -127,9 +129,6 @@
       }
     }
 
-   window.onload = function() {
-    div_datos_adicionales
-   };
   
 </script>
 </html>
