@@ -120,12 +120,11 @@
 
     function div_datos_adicionales(){
       let divInfoAdicional = document.querySelector('#dvInfoAdicional');
-      if(InfoAd1.value == '' || InfoAd2.value == '' || InfoAd3.value == '')
-      {
-        divInfoAdicional.style.display = 'none';
-      }else{
+      //Si hay un valor, se muestra el div, de lo contrario, se oculta
+      if(InfoAd1.value.trim() != '' || InfoAd2.value.trim() != '' || InfoAd3.value.trim() != ''){
         divInfoAdicional.style.display = 'block';
-
+      }else{
+        divInfoAdicional.style.display = 'none';
       }
     }
 
