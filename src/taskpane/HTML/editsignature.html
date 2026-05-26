@@ -46,6 +46,8 @@
       <input type="text" placeholder="Información Adicional" id="InfoAd2" readonly />
 
       <input type="text" placeholder="Información Adicional" id="InfoAd3" readonly />
+
+      <input  type="text" placeholder="Grado Académico" id="GrdoAcad" readonly />
     </div>
     <!--<p style = "position:relative; left: 0px; top:35.5px;"> Sobrescribir la firma de Outlook</p>-->
     <p style = "position:relative; left: 0px; top:35.5px; font-family: Arial, Helvetica, sans-serif;"> Ambiente: desarrollo </p>
@@ -73,6 +75,7 @@
   let InfoAd1 = document.querySelector('#InfoAd1');
   let InfoAd2 = document.querySelector('#InfoAd2');
   let InfoAd3 = document.querySelector('#InfoAd3');
+  let GrdoAcad = document.querySelector('#GrdoAcad');
 
   function cargar_datos() {
 
@@ -115,6 +118,7 @@
       InfoAd1.value = datos.DatoAd1;
       InfoAd2.value = datos.DatoAd2;
       InfoAd3.value = datos.DatoAd3;
+      GrdoAcad.value = datos.GrdoAcad;
 
       if(InfoAd1.value.trim() != '' || InfoAd2.value.trim() != '' || InfoAd3.value.trim() != ''){
         divInfoAdicional.style.display = 'block';

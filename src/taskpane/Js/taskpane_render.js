@@ -38,6 +38,7 @@ function on_initialization_complete()
       _InfoAd3 = $("input#InfoAd3");
       _preferred_pronoun = $("input#preferred_pronoun");
       _message = $("p#message");
+      _GrdoAcad = $("input#GrdoAcad");
 
       prepopulate_from_userprofile();
       load_saved_user_info();
@@ -156,6 +157,7 @@ function create_user_info()
     user_info.InfoAd1 = _InfoAd1.val().trim();
     user_info.InfoAd2 = _InfoAd2.val().trim();
     user_info.InfoAd3 = _InfoAd3.val().trim();
+    user_info.GrdoAcad = _GrdoAcad.val().trim();
 
     if (user_info.pronoun !== "")
     {
