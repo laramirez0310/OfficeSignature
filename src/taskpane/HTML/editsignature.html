@@ -41,13 +41,6 @@
 
       <h3 style="font-family: Arial, Helvetica, sans-serif;">Información adicional:</h3>
 
-      <input type="text" placeholder="Información Adicional" id="InfoAd1" readonly />
-
-      <input type="text" placeholder="Información Adicional" id="InfoAd2" readonly />
-
-      <input type="text" placeholder="Información Adicional" id="InfoAd3" readonly />
-
-      <input  type="text" placeholder="Grado Académico" id="GrdoAcad" readonly />
     </div>
     <!--<p style = "position:relative; left: 0px; top:35.5px;"> Sobrescribir la firma de Outlook</p>-->
     <p style = "position:relative; left: 0px; top:35.5px; font-family: Arial, Helvetica, sans-serif;"> Ambiente: desarrollo </p>
@@ -105,8 +98,10 @@
 
   function dataUser(datos) {
       let divInfoAdicional = document.querySelector('#dvInfoAdicional');
+
       nombre.value = datos.name;
       cargo.value = datos.jobtitle;
+
       if(datos.phone[0]== null || datos.phone[0].trim() == '')
       { 
         tel.value = datos.hphone;
@@ -116,16 +111,34 @@
       }
       
       unidad.value = datos.department;
-      InfoAd1.value = datos.DatoAd1;
+
+      const Campos = 15;
+      let ExisteInfoAdicional = false;
+
+      for (let i = 0; i < Campos; i++) {
+          let valor = datos['DatoAd' + i];
+
+          if (valor != null && valor.trim() != '') {
+              ExisteInfoAdicional = true;
+
+              let input = document.createElement('input');
+              input.type = 'text';
+              input.placeholder = 'Información Adicional';
+              input.id = 'InfoAd' + i;
+              input.value = valor;
+              input.readOnly = true;
+              divInfoAdicional.appendChild(input);
+
+          }
+      }
+
+      /*InfoAd1.value = datos.DatoAd1;
       InfoAd2.value = datos.DatoAd2;
       InfoAd3.value = datos.DatoAd3;
-      GrdoAcad.value = datos.GrdoAcad;
+      GrdoAcad.value = datos.GrdoAcad;*/
 
-      if(InfoAd1.value.trim() != '' || InfoAd2.value.trim() != '' || InfoAd3.value.trim() != ''){
-        divInfoAdicional.style.display = 'block';
-      }else{
-        divInfoAdicional.style.display = 'none';
-      }
+      divInfoAdicional.style.display = ExisteInfoAdicional ? 'block' : 'none';
+
 
       //div_datos_adicionales();
     }
