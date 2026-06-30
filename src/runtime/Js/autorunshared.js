@@ -172,9 +172,6 @@ function get_command_id() {
  function get_template_A_info(user_info) {
   const logoFileName = "marca-pucmm.jpg";
   let str = "";
-  if (is_valid_data(user_info.greeting)) {
-    str += user_info.greeting + "<br/>";
-  }
 
   str +='<table border="0" cellpadding="1" cellspacing="1"><tbody><tr><td valign="top"><font size="3" color="#17365d" face="Arial">';
   //str +='<strong>'+ user_info.name +'</strong></font>';
