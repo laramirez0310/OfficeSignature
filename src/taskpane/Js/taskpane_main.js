@@ -30,10 +30,6 @@ function save_signature_settings()
 
   if (user_info_str)
   {
-	if (!_user_info)
-	{
-	  _user_info = JSON.parse(user_info_str); 
-	}
 
 	Office.context.roamingSettings.set('user_info', user_info_str);
 	Office.context.roamingSettings.set('newMail', $("#new_mail option:selected").val());
