@@ -150,7 +150,7 @@ function create_user_info()
   
     // Busca los InfoAdN directamente en el DOM en este momento,
     // ya que se crean dinámicamente después del fetch en dataUser()
-    for (let i = 1; i < 15; i++)
+    for (let i = 1; i <= 15; i++)
     {
       console.log("Dentro del for " + i);
       let $input = $("input#InfoAd" + i);
