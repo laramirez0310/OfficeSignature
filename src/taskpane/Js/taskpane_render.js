@@ -12,8 +12,10 @@ let _tipourl;
 let _InfoAd1;
 let _InfoAd2;
 let _InfoAd3;
+let _InfoAd = [];
 let _preferred_pronoun;
 let _message;
+const Campos = 15;
 
 Office.initialize = function(reason)
 {
@@ -32,10 +34,22 @@ function on_initialization_complete()
       _job_title = $("input#job_title");
       _phone_number = $("input#phone_number");
       _greeting_text = $("input#greeting_text");
-      //_tipourl = $("select#tipourl");
       _InfoAd1 = $("input#InfoAd1");
       _InfoAd2 = $("input#InfoAd2");
       _InfoAd3 = $("input#InfoAd3");
+      _InfoAd = [];
+
+      for (let i = 1; i <= Campos; i++)
+      {
+        let $input = $("input#InfoAd" + i);
+
+        if ($input.length > 0)
+        {
+          _InfoAd.push($input);
+        }
+      }
+
+
       _preferred_pronoun = $("input#preferred_pronoun");
       _message = $("p#message");
       _GrdoAcad = $("input#GrdoAcad");
@@ -67,18 +81,19 @@ function load_saved_user_info()
   if (user_info_str)
   {
     const user_info = JSON.parse(user_info_str);
-
     /*_display_name.val(user_info.name);
     _email_id.val(user_info.email);
     _job_title.val(user_info.job);
     _phone_number.val(user_info.phone);*/
     //_greeting_text.val(user_info.greeting);
     //_tipourl.val(user_info.tipourl);
-    _InfoAd1.val(user_info.InfoAd1);
-    _InfoAd2.val(user_info.InfoAd2);
-    _InfoAd3.val(user_info.InfoAd3);
-    //_preferred_pronoun.val(user_info.pronoun);
-    
+
+    _InfoAd.forEach(function($input, idx)
+    {
+      let key = 'InfoAd' + (idx + 1);
+      $input.val(user_info[key] || '');
+    });
+
   }
 }
 
@@ -139,13 +154,14 @@ function create_user_info()
     user_info.email = email;
     user_info.job =  _job_title.val().trim();
     user_info.phone = _phone_number.val().trim();
-    //user_info.greeting = _greeting_text.val().trim();
     user_info.pronoun = _preferred_pronoun.val().trim();
-    //user_info.tipourl = _tipourl.val().trim();
-    user_info.InfoAd1 = _InfoAd1.val().trim();
-    user_info.InfoAd2 = _InfoAd2.val().trim();
-    user_info.InfoAd3 = _InfoAd3.val().trim();
-    user_info.GrdoAcad = _GrdoAcad.val().trim();
+
+
+    _InfoAd.forEach(function($input, idx)
+    {
+      let key = 'InfoAd' + (idx + 1);
+      user_info[key] = $input.val().trim();
+    });
 
     if (user_info.pronoun !== "")
     {
