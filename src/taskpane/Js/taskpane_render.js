@@ -135,6 +135,7 @@ function create_user_info()
   let email = _email_id.val().trim();
 
   clear_message();
+  console.log("validando:", name, email, form_has_valid_data(name, email));
   if (form_has_valid_data(name, email))
   {
     clear_message();
@@ -165,8 +166,9 @@ function create_user_info()
       user_info.pronoun = "" + user_info.pronoun + "";
     }
 
-    console.log("create user info fuera del foreach");
-    localStorage.setItem('user_info', JSON.stringify(user_info));
+console.log("user_info antes de guardar:", user_info);
+localStorage.setItem('user_info', JSON.stringify(user_info));
+console.log("guardado en localStorage:", localStorage.getItem('user_info'));
     //navigate_to_taskpane_assignsignature();
     save_signature_settings();
   }
