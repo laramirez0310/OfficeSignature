@@ -170,6 +170,6 @@ console.log("user_info antes de guardar:", user_info);
 localStorage.setItem('user_info', JSON.stringify(user_info));
 console.log("guardado en localStorage:", localStorage.getItem('user_info'));
     //navigate_to_taskpane_assignsignature();
-    save_signature_settings();
+    save_signature_settings(user_info);
   }
 }

@@ -24,13 +24,24 @@ function disable_client_signatures_if_necessary()
   }
 }
 
-function save_signature_settings()
+function save_signature_settings(user_info)
 {
-  let user_info_str = localStorage.getItem('user_info');
+  //let user_info_str = localStorage.getItem('user_info');
+  let user_info_str = JSON.stringify(user_info);
 
-  if (user_info_str)
+	if (!user_info)
+	{
+		user_info_str = localStorage.getItem('user_info');
+		if (user_info_str)
+		{
+		user_info = JSON.parse(user_info_str);
+		}
+	}
+
+  if (user_info)
   {
 
+	_user_info = user_info;
 	Office.context.roamingSettings.set('user_info', user_info_str);
 	Office.context.roamingSettings.set('newMail', $("#new_mail option:selected").val());
 	Office.context.roamingSettings.set('reply', $("#reply option:selected").val());
