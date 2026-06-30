@@ -143,7 +143,6 @@ function create_user_info()
   let email = _email_id.val().trim();
 
   clear_message();
-  console.log("create user info fuera");
   if (form_has_valid_data(name, email))
   {
     clear_message();
@@ -156,11 +155,12 @@ function create_user_info()
     user_info.phone = _phone_number.val().trim();
     user_info.pronoun = _preferred_pronoun.val().trim();
 
-
+    console.log(_InfoAd);
     _InfoAd.forEach(function($input, idx)
     {
       let key = 'InfoAd' + (idx + 1);
       user_info[key] = $input.val().trim();
+      console.log("Dentro del foreach " + key + " = " + user_info[key]);
     });
 
     if (user_info.pronoun !== "")
@@ -168,7 +168,7 @@ function create_user_info()
       user_info.pronoun = "" + user_info.pronoun + "";
     }
 
-    console.log("create user info dentro");
+    console.log("create user info fuera del foreach");
     localStorage.setItem('user_info', JSON.stringify(user_info));
     //navigate_to_taskpane_assignsignature();
     save_signature_settings();

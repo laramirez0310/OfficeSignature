@@ -104,7 +104,6 @@ function insert_signature(str)
 
 function test_template_A()
 {
-	console.log("antes de get_template_A_str");
 	let str = get_template_A_str(_user_info);
 	//let str = get_template_A_info(_user_info);
 	console.log("test_template_A_str - " + str);
