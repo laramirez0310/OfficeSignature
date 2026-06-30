@@ -34,20 +34,10 @@ function on_initialization_complete()
       _job_title = $("input#job_title");
       _phone_number = $("input#phone_number");
       _greeting_text = $("input#greeting_text");
-      _InfoAd1 = $("input#InfoAd1");
+      /*_InfoAd1 = $("input#InfoAd1");
       _InfoAd2 = $("input#InfoAd2");
-      _InfoAd3 = $("input#InfoAd3");
+      _InfoAd3 = $("input#InfoAd3");*/
       _InfoAd = [];
-
-      for (let i = 1; i <= Campos; i++)
-      {
-        let $input = $("input#InfoAd" + i);
-
-        if ($input.length > 0)
-        {
-          _InfoAd.push($input);
-        }
-      }
 
 
       _preferred_pronoun = $("input#preferred_pronoun");
@@ -88,12 +78,14 @@ function load_saved_user_info()
     //_greeting_text.val(user_info.greeting);
     //_tipourl.val(user_info.tipourl);
 
+      console.log("Antes de cargar los datos:", _InfoAd);
     _InfoAd.forEach(function($input, idx)
     {
       let key = 'InfoAd' + (idx + 1);
       $input.val(user_info[key] || '');
     });
 
+      console.log("Despues de cargar los datos:", _InfoAd);
   }
 }
 
@@ -155,13 +147,18 @@ function create_user_info()
     user_info.phone = _phone_number.val().trim();
     user_info.pronoun = _preferred_pronoun.val().trim();
 
-    console.log(_InfoAd);
-    _InfoAd.forEach(function($input, idx)
+  
+    // Busca los InfoAdN directamente en el DOM en este momento,
+    // ya que se crean dinámicamente después del fetch en dataUser()
+    for (let i = 1; i < 15; i++)
     {
-      let key = 'InfoAd' + (idx + 1);
-      user_info[key] = $input.val().trim();
-      console.log("Dentro del foreach " + key + " = " + user_info[key]);
-    });
+      console.log("Dentro del for " + i);
+      let $input = $("input#InfoAd" + i);
+      if ($input.length > 0)
+      {
+        user_info['InfoAd' + i] = $input.val().trim();
+      }
+    }
 
     if (user_info.pronoun !== "")
     {
