@@ -41,7 +41,7 @@ function get_template_A_str(user_info)
   str +='<a class="social-icons" href="http://www.facebook.com/pucmm/" target="_blank"><img style="margin:2px;" src="https://pucmm.edu.do/wp-content/uploads/2026/07/facebook.png" alt="Facebook PUCMM" width="24" height="24"></a>';
   str +='<a class="social-icons" href="http://twitter.com/pucmm/" target="_blank"><img src="https://pucmm.edu.do/wp-content/uploads/2026/07/twitter.png" style="margin:2px;" alt="Twitter PUCMM" width="24" height="25"></a>';
   str +='<a class="social-icons" href="http://www.instagram.com/pucmm" target="_blank"><img src="https://pucmm.edu.do/wp-content/uploads/2026/07/instagram.png" style="margin:2px;" alt="Instagram PUCMM" width="24" height="25"></a>';
-  str +='<a class="social-icons" href="http://www.youtube.com/pucmmtv/" target="_blank"><img src="https://tinyurl.com/2runapaz" style="margin:2px;" alt="Youtube PUCMM" width="24" height="25"></a>'; 
+  str +='<a class="social-icons" href="http://www.youtube.com/pucmmtv/" target="_blank"><img src="https://pucmm.edu.do/wp-content/uploads/2026/07/youtube.png" style="margin:2px;" alt="Youtube PUCMM" width="24" height="25"></a>'; 
   str +='<a class="social-icons" href="https://www.linkedin.com/edu/school?id=12020" target="_blank"><img src="https://pucmm.edu.do/wp-content/uploads/2026/07/linkedin.png" style="margin:2px;" alt="Linkedin PUCMM" width="24" height="25"></a></td></tr></tbody></table></td></tr><tr><td>';
   str +='<img src="https://pucmm.edu.do/wp-content/uploads/2026/07/Green.gif" width="14" height="14">&nbsp;&nbsp;';
   str +='<font color="#7F7F7F" size="1" face="Arial">No me imprimas si no es necesario.</font></td></tr><tr><td>';
