@@ -1,11 +1,15 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
+//import {get_template_A_info} from '../../runtime/Js/autorunshared.js';
+
+let _user_info;
+
 function save_user_settings_to_roaming_settings()
 {
   Office.context.roamingSettings.saveAsync(function (asyncResult)
   {
-	//console.log("save_user_info_str_to_roaming_settings - " + JSON.stringify(asyncResult));
+	console.log("save_user_info_str_to_roaming_settings - " + JSON.stringify(asyncResult));
   });
 }
 
@@ -20,17 +24,24 @@ function disable_client_signatures_if_necessary()
   }
 }
 
-function save_signature_settings()
+function save_signature_settings(user_info)
 {
-  let user_info_str = localStorage.getItem('user_info');
+  //let user_info_str = localStorage.getItem('user_info');
+  let user_info_str = JSON.stringify(user_info);
 
-  if (user_info_str)
-  {
-	if (!_user_info)
+	if (!user_info)
 	{
-	  _user_info = JSON.parse(user_info_str); 
+		user_info_str = localStorage.getItem('user_info');
+		if (user_info_str)
+		{
+		user_info = JSON.parse(user_info_str);
+		}
 	}
 
+  if (user_info)
+  {
+
+	_user_info = user_info;
 	Office.context.roamingSettings.set('user_info', user_info_str);
 	Office.context.roamingSettings.set('newMail', $("#new_mail option:selected").val());
 	Office.context.roamingSettings.set('reply', $("#reply option:selected").val());
@@ -42,7 +53,7 @@ function save_signature_settings()
 
 	disable_client_signatures_if_necessary();
 	test_template_A();
-	$("#message").show("slow");
+	$("#message-successful").show("slow");
   }
   else
   {
@@ -50,7 +61,7 @@ function save_signature_settings()
   }
 }
 
-
+//export {save_signature_settings}; 
 
 function set_body(str)
 {
@@ -101,10 +112,12 @@ function insert_signature(str)
 function test_template_A()
 {
 	let str = get_template_A_str(_user_info);
-	//console.log("test_template_A - " + str);
+	//let str = get_template_A_info(_user_info);
+	console.log("test_template_A_str - " + str);
 
 	insert_signature(str);
 }
+
 
 function test_template_B()
 {

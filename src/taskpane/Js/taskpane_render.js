@@ -1,13 +1,21 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
+//import { save_signature_settings } from "./taskpane_main.js";
+
 let _display_name;
 let _job_title;
 let _phone_number;
 let _email_id;
 let _greeting_text;
+let _tipourl;
+let _InfoAd1;
+let _InfoAd2;
+let _InfoAd3;
+let _InfoAd = [];
 let _preferred_pronoun;
 let _message;
+const Campos = 15;
 
 Office.initialize = function(reason)
 {
@@ -26,11 +34,19 @@ function on_initialization_complete()
       _job_title = $("input#job_title");
       _phone_number = $("input#phone_number");
       _greeting_text = $("input#greeting_text");
+      /*_InfoAd1 = $("input#InfoAd1");
+      _InfoAd2 = $("input#InfoAd2");
+      _InfoAd3 = $("input#InfoAd3");*/
+      _InfoAd = [];
+
+
       _preferred_pronoun = $("input#preferred_pronoun");
       _message = $("p#message");
+      _GrdoAcad = $("input#GrdoAcad");
 
       prepopulate_from_userprofile();
       load_saved_user_info();
+      cargar_datos();
 		}
 	);
 }
@@ -43,18 +59,6 @@ function prepopulate_from_userprofile()
   _phone_number.val(Office.context.MailboxEnums.EntityType.PhoneNumber);*/
  
 }
-var item = Office.context.mailbox.item;
-// Get an array of strings that represent contacts in the current item's body.
-var contacts = item.getEntitiesByType(Office.MailboxEnums.EntityType.Contact);
-console.log("There are " + contacts.length + " contacts.")
-contacts.forEach(function (contact) {
-    console.log("Person name: " + JSON.stringify(contact.personName));
-    console.log("Business name: " + JSON.stringify(contact.businessName));
-    console.log("Addresses: " + JSON.stringify(contact.addresses));
-    console.log("Phone numbers: " + JSON.stringify(contact.phoneNumbers));
-    console.log("Email addresses: " + JSON.stringify(contact.emailAddresses));
-    console.log("Urls: " + JSON.stringify(contact.urls));
-});
 
 function load_saved_user_info()
 {
@@ -67,14 +71,21 @@ function load_saved_user_info()
   if (user_info_str)
   {
     const user_info = JSON.parse(user_info_str);
-
-    _display_name.val(user_info.name);
+    /*_display_name.val(user_info.name);
     _email_id.val(user_info.email);
     _job_title.val(user_info.job);
-    _phone_number.val(user_info.phone);
-    _greeting_text.val(user_info.greeting);
-    _preferred_pronoun.val(user_info.pronoun);
-    
+    _phone_number.val(user_info.phone);*/
+    //_greeting_text.val(user_info.greeting);
+    //_tipourl.val(user_info.tipourl);
+
+      console.log("Antes de cargar los datos:", _InfoAd);
+    _InfoAd.forEach(function($input, idx)
+    {
+      let key = 'InfoAd' + (idx + 1);
+      $input.val(user_info[key] || '');
+    });
+
+      console.log("Despues de cargar los datos:", _InfoAd);
   }
 }
 
@@ -115,11 +126,8 @@ function form_has_valid_data(name, email)
 
   return true;
 }
- 
-function navigate_to_taskpane_assignsignature()
-{
-  window.location.href = 'assignsignature.html';
-}
+
+
 
 function create_user_info()
 {
@@ -127,7 +135,7 @@ function create_user_info()
   let email = _email_id.val().trim();
 
   clear_message();
-
+  console.log("validando:", name, email, form_has_valid_data(name, email));
   if (form_has_valid_data(name, email))
   {
     clear_message();
@@ -138,67 +146,30 @@ function create_user_info()
     user_info.email = email;
     user_info.job =  _job_title.val().trim();
     user_info.phone = _phone_number.val().trim();
-    user_info.greeting = _greeting_text.val().trim();
     user_info.pronoun = _preferred_pronoun.val().trim();
+
+  
+    // Busca los InfoAdN directamente en el DOM en este momento,
+    // ya que se crean dinámicamente después del fetch en dataUser()
+    for (let i = 1; i <= 15; i++)
+    {
+      console.log("Dentro del for " + i);
+      let $input = $("input#InfoAd" + i);
+      if ($input.length > 0)
+      {
+        user_info['InfoAd' + i] = $input.val().trim();
+      }
+    }
 
     if (user_info.pronoun !== "")
     {
       user_info.pronoun = "" + user_info.pronoun + "";
     }
 
-    //console.log(user_info);
-    localStorage.setItem('user_info', JSON.stringify(user_info));
-    navigate_to_taskpane_assignsignature();
+console.log("user_info antes de guardar:", user_info);
+localStorage.setItem('user_info', JSON.stringify(user_info));
+console.log("guardado en localStorage:", localStorage.getItem('user_info'));
+    //navigate_to_taskpane_assignsignature();
+    save_signature_settings(user_info);
   }
-}
-
-function clear_all_fields()
-{
-  _display_name.val("");
-  _email_id.val("");
-  _job_title.val("");
-  _phone_number.val("");
-  _greeting_text.val("");
-  _preferred_pronoun.val("");
-}
-
-function clear_all_localstorage_data()
-{
-  localStorage.removeItem('user_info');
-  localStorage.removeItem('newMail');
-  localStorage.removeItem('reply');
-  localStorage.removeItem('forward');
-  localStorage.removeItem('override_olk_signature');
-}
-
-function clear_roaming_settings()
-{
-  Office.context.roamingSettings.remove('user_info');
-  Office.context.roamingSettings.remove('newMail');
-  Office.context.roamingSettings.remove('reply');
-  Office.context.roamingSettings.remove('forward');
-  Office.context.roamingSettings.remove('override_olk_signature');
-
-  Office.context.roamingSettings.saveAsync
-  (
-    function (asyncResult)
-    {
-      //console.log("clear_roaming_settings - " + JSON.stringify(asyncResult));
-
-      let message = "¡Todas las configuraciones se restablecieron con éxito! Este complemento no insertará ninguna firma. Puede cerrar este panel ahora.";
-      if (asyncResult.status === Office.AsyncResultStatus.Failed)
-      {
-        message = "No se pudo restablecer. Inténtalo de nuevo.";
-      }
-
-      display_message(message);
-    }
-  );
-}
-
-function reset_all_configuration()
-{
-  clear_all_fields();
-  clear_all_localstorage_data();
-  clear_roaming_settings();
 }
