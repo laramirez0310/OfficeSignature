@@ -142,9 +142,9 @@ function get_template_name(compose_type) {
  * @param {*} user_info Information details about the user
  * @returns HTML signature in requested template format
  */
-async function get_signature_info(template_name, user_info) {
-    //return cargar_datos(user_info);
-  return get_template_A_info(user_info,await cargar_datos());
+function get_signature_info(template_name, user_info) {
+    return cargar_datos(user_info);
+  //return get_template_A_info(user_info);
 }
 
 /**
@@ -158,7 +158,7 @@ function get_command_id() {
   return "MRCS_TpBtn0";
 }
 
-  function cargar_datos() {
+  function cargar_datos(user_info) {
 
     let myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -169,15 +169,10 @@ function get_command_id() {
       body: "",
       redirect: 'follow'
     };
-        return fetch("https://default73c9a419863d4226a83f7a200ad69b.e9.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/15/workflows/8e0dc4da953541c6af3b32bbe54b40e6/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=PRdRmuPRX7vTs8X03RmspDc-7zvXsKkQ7jbRHuvId_E", requestOptions)        
-//      fetch("https://default73c9a419863d4226a83f7a200ad69b.e9.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/15/workflows/8e0dc4da953541c6af3b32bbe54b40e6/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=PRdRmuPRX7vTs8X03RmspDc-7zvXsKkQ7jbRHuvId_E", requestOptions)        
-/*      .then(response => response.json())
-        .then(result => { dataFirma(result) }) 
+      fetch("https://default73c9a419863d4226a83f7a200ad69b.e9.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/15/workflows/8e0dc4da953541c6af3b32bbe54b40e6/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=PRdRmuPRX7vTs8X03RmspDc-7zvXsKkQ7jbRHuvId_E", requestOptions)        
+      .then(response => response.json())
+//        .then(result => { dataFirma(result) }) 
         .then(result => { get_template_A_info(user_info,result) }) 
-        /*.then(result => {return result;})
-        .catch(error => console.log('error', error));*/
-        .then(response => response.json())
-        .then(result => result) // Retorna el JSON limpio
         .catch(error => console.log('error', error));
     
   }
@@ -286,9 +281,11 @@ function get_command_id() {
   // return object with signature HTML, logo image base64 string, and filename to reference it with.
   return {
     signature: str,
-    logoBase64:
-      "iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAEeSURBVFhHzdhBEoIwDIVh4EoeQJd6YrceQM+kvo5hQNokLymO/4aF0/ajlBl1fL4bEp0uj3K9XQ/lGi0MEcB3UdD0uVK1EEj7TIuGeBaKYCgIswCLcUMid8mMcUEiCMk71oRYE+Etsd4UD0aFeBBSFtOEMAgpg6lCIggpitlAMggpgllBeiAkFjNDeiIkBlMgeyAkL6Z6WJdlEJJnjvF4vje/BvRALNN23tyRXzVpd22dHSZtLhjMHemB8cxRINZZyGCssbL2vCN7YLwItHo0PTEMAm3OSA8Mi0DVw5rBRBCoCkERTBSBmhDEYDII5PqlZy1iZSGQuiOSZ6JW3rEuCIpgmDFuCGImZuEUBHkWiOweDUHaQhEE+pM/aobhBZaOpYLJeeeoAAAAAElFTkSuQmCC",
-    logoFileName: logoFileName,
+    //logoBase64:
+    //  "iVBORw0KGgoAAAANSUhEUgAAACIAAAAiCAYAAAA6RwvCAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsQAAA7EAZUrDhsAAAEeSURBVFhHzdhBEoIwDIVh4EoeQJd6YrceQM+kvo5hQNokLymO/4aF0/ajlBl1fL4bEp0uj3K9XQ/lGi0MEcB3UdD0uVK1EEj7TIuGeBaKYCgIswCLcUMid8mMcUEiCMk71oRYE+Etsd4UD0aFeBBSFtOEMAgpg6lCIggpitlAMggpgllBeiAkFjNDeiIkBlMgeyAkL6Z6WJdlEJJnjvF4vje/BvRALNN23tyRXzVpd22dHSZtLhjMHemB8cxRINZZyGCssbL2vCN7YLwItHo0PTEMAm3OSA8Mi0DVw5rBRBCoCkERTBSBmhDEYDII5PqlZy1iZSGQuiOSZ6JW3rEuCIpgmDFuCGImZuEUBHkWiOweDUHaQhEE+pM/aobhBZaOpYLJeeeoAAAAAElFTkSuQmCC",
+    //logoFileName: logoFileName,
+    logoBase64: null,
+    logoFileName: null,
   };
 }
 
