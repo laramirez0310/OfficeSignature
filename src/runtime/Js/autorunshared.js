@@ -143,8 +143,7 @@ function get_template_name(compose_type) {
  * @returns HTML signature in requested template format
  */
 function get_signature_info(template_name, user_info) {
-  if (template_name === "templateB") return get_template_B_info(user_info);
-  if (template_name === "templateC") return get_template_C_info(user_info);
+         cargar_datos();
   return get_template_A_info(user_info);
 }
 
@@ -159,6 +158,47 @@ function get_command_id() {
   return "MRCS_TpBtn0";
 }
 
+  function cargar_datos() {
+
+    let myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    let requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: "",
+      redirect: 'follow'
+    };
+      fetch("https://default73c9a419863d4226a83f7a200ad69b.e9.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/15/workflows/8e0dc4da953541c6af3b32bbe54b40e6/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=PRdRmuPRX7vTs8X03RmspDc-7zvXsKkQ7jbRHuvId_E", requestOptions)        
+      .then(response => response.json())
+        .then(result => { dataFirma(result) })
+        .catch(error => console.log('error', error));
+    
+  }
+
+  function dataFirma(datos) {
+
+    let Orden = 0.0;
+    let Imagen = "";      
+    let Enlace = "";
+    let Seccion = "";
+    let Nota = "";
+    console.log("datos.length: "+ datos.length);
+    /*for(let i = 0; i < datos.length; i++)
+    {
+        Orden = datos[i].Orden;
+        Imagen = datos[i].Imagen;      
+        Enlace = datos[i].Enlace;
+        Seccion = datos[i].Seccion;
+        Nota = datos[i].Nota;
+      }*/
+
+
+
+    }
+
+
+
 /**
  * Gets HTML string for template A
  * Embeds the signature logo image into the HTML string
@@ -172,7 +212,7 @@ function get_command_id() {
  function get_template_A_info(user_info) {
   const logoFileName = "marca-pucmm.jpg";
   let str = "";
-  let urlimg = "https://pucmm.edu.do/wp-content/uploads/2026/07/";
+  let urlimg = "https://pucmm.edu.do/wp-content/uploads/2026/07/";//no fijo
   str +='<table border="0" cellpadding="1" cellspacing="1"><tbody><tr><td valign="top"><font size="3" color="#17365d" face="Arial">';
   //str +='<strong>'+ user_info.name +'</strong></font>';
   str +='<strong>'+ user_info.name + (is_valid_data(user_info.GrdoAcad) ? ", " + user_info.GrdoAcad : "") +'</strong></font>';
