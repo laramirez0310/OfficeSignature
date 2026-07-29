@@ -207,14 +207,16 @@ function get_command_id() {
         console.log("Enlace: "+ Enlace);
         console.log("Seccion: "+ Seccion);
         console.log("Nota: "+ Nota);
-
+        
         if(Seccion === "social")
         {
+          console.log("Debe ser social: "+ Seccion);
+          console.log("strfirma limpio: "+ strfirma);
           strfirma +='<a class="social-icons" href="'+ Enlace +'" target="_blank"><img src="'+ Imagen +'" style="margin:2px;" alt="'+ textoAlt +'" width="24" height="25"></a>';
-   
+            console.log("strfirma for: "+ strfirma);
         }
       }
-
+       console.log("strfirma fuera for: "+ strfirma);
       /*let item = datos.datos[i];
 
       datosFirma[orden] = {
