@@ -143,7 +143,7 @@ function get_template_name(compose_type) {
  * @returns HTML signature in requested template format
  */
 function get_signature_info(template_name, user_info) {
-         cargar_datos();
+    cargar_datos(user_info);
   return get_template_A_info(user_info);
 }
 
@@ -158,7 +158,7 @@ function get_command_id() {
   return "MRCS_TpBtn0";
 }
 
-  function cargar_datos() {
+  function cargar_datos(user_info) {
 
     let myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -171,7 +171,7 @@ function get_command_id() {
     };
       fetch("https://default73c9a419863d4226a83f7a200ad69b.e9.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/15/workflows/8e0dc4da953541c6af3b32bbe54b40e6/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=PRdRmuPRX7vTs8X03RmspDc-7zvXsKkQ7jbRHuvId_E", requestOptions)        
       .then(response => response.json())
-        .then(result => { dataFirma(result) })
+        .then(result => { dataFirma(datos) })
         .catch(error => console.log('error', error));
     
   }
@@ -184,15 +184,23 @@ function get_command_id() {
     let Seccion = "";
     let Nota = "";
 
-    console.log("datos.length: "+ datos.datos.length);
-    /*for(let i = 0; i < datos.length; i++)
+    //console.log("datos.length: "+ datos.datos.length);
+      for(let i = 0; i < datos.datos.length; i++)
     {
-        Orden = datos[i].Orden;
-        Imagen = datos[i].Imagen;      
-        Enlace = datos[i].Enlace;
-        Seccion = datos[i].Seccion;
-        Nota = datos[i].Nota;
-      }*/
+        Orden = datos.datos[i].Orden;
+        Imagen = datos.datos[i].Imagen;      
+        Enlace = datos.datos[i].Enlace;
+        Seccion = datos.datos[i].Seccion;
+        Nota = datos.datos[i].Nota;
+
+        console.log("Orden: "+ Orden);
+        console.log("Imagen: "+ Imagen);
+        console.log("Enlace: "+ Enlace);
+        console.log("Seccion: "+ Seccion);
+        console.log("Nota: "+ Nota);
+
+      }
+
 
 
 
@@ -210,8 +218,9 @@ function get_command_id() {
     "logoFileName": The filename of the logo image
  */
 
- function get_template_A_info(user_info) {
+ function get_template_A_info(user_info,result) {
   const logoFileName = "marca-pucmm.jpg";
+  //Limpiar saltos
   let str = "";
   let urlimg = "https://pucmm.edu.do/wp-content/uploads/2026/07/";//no fijo
   str +='<table border="0" cellpadding="1" cellspacing="1"><tbody><tr><td valign="top"><font size="3" color="#17365d" face="Arial">';
