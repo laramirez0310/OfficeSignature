@@ -187,11 +187,11 @@ function get_command_id() {
     //console.log("datos.length: "+ datos.datos.length);
       for(let i = 0; i < datos.datos.length; i++)
     {
-        Orden = datos.datos[i].Orden;
-        Imagen = datos.datos[i].Imagen;      
+        Orden = datos[i].datos.Orden;
+        /*Imagen = datos.datos[i].Imagen;      
         Enlace = datos.datos[i].Enlace;
         Seccion = datos.datos[i].Seccion;
-        Nota = datos.datos[i].Nota;
+        Nota = datos.datos[i].Nota;*/
 
         console.log("Orden: "+ Orden);
         console.log("Imagen: "+ Imagen);
