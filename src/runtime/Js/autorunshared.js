@@ -237,8 +237,7 @@ function get_command_id() {
  */
 
  function get_template_A_info(user_info) {
-  const logoFileName = "marca-pucmm.jpg";
-  let strdataFirma = (datos); 
+  const logoFileName = "marca-pucmm.jpg"; 
   let str = ""; 
 
         str +='<table border="0" cellpadding="1" cellspacing="1"><tbody><tr><td valign="top"><font size="3" color="#17365d" face="Arial">';
@@ -267,7 +266,7 @@ function get_command_id() {
             : "";
         }
         str +='</font></td></tr><tr><td><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="240" height="81">';
-        str +='<a href="https://pucmm.edu.do/"><img src="'+ datosFirma[10].imagen +'" width="258" height="87" alt="Pontificia Universidad Católica Madre y Maestra"></a></td><td width="15"></td>';
+        str +='<a href="https://pucmm.edu.do/"><img src="https://pucmm.edu.do/wp-content/uploads/2026/07/marca-pucmm.jpg" width="258" height="87" alt="Pontificia Universidad Católica Madre y Maestra"></a></td><td width="15"></td>';
         str +='<td style="padding:0 0 0 15px;border-left-style:solid;border-left-width:1pt;border-left-color:#7f7f7f">';
         str +='<p><font size="2" face="Arial"><strong>Campus de Santiago:</strong><br>Autopista Duarte km. 1½, Santiago, R.D.';
         str +='<br><br><strong>Campus de Santo Domingo:</strong><br>Av. Abraham Lincoln esq. Av. Simón Bolívar, Santo Domingo, R.D.</font></p></td></tr></tbody></table></td></tr><tr><td height="70" align="left" valign="middle">';
