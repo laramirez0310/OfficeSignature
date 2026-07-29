@@ -183,9 +183,8 @@ function get_command_id() {
     let Enlace = "";
     let Seccion = "";
     let Nota = "";
-    let cant = JSON.parse(datos);
 
-    console.log("datos.length: "+ cant.datos.length);
+    console.log("datos.length: "+ datos.datos.length);
     /*for(let i = 0; i < datos.length; i++)
     {
         Orden = datos[i].Orden;
