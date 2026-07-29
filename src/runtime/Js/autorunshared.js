@@ -143,7 +143,7 @@ function get_template_name(compose_type) {
  * @returns HTML signature in requested template format
  */
 function get_signature_info(template_name, user_info) {
-    cargar_datos(user_info);
+    cargar_datos();
   return get_template_A_info(user_info);
 }
 
@@ -158,7 +158,7 @@ function get_command_id() {
   return "MRCS_TpBtn0";
 }
 
-  function cargar_datos(user_info) {
+  function cargar_datos() {
 
     let myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -193,6 +193,7 @@ function get_command_id() {
         Seccion = datos.datos[i].Seccion;
         Nota = datos.datos[i].Nota;
 
+        console.log("Indice: "+ i);
         console.log("Orden: "+ Orden);
         console.log("Imagen: "+ Imagen);
         console.log("Enlace: "+ Enlace);
@@ -200,10 +201,6 @@ function get_command_id() {
         console.log("Nota: "+ Nota);
 
       }
-
-
-
-
     }
 
 
@@ -218,7 +215,7 @@ function get_command_id() {
     "logoFileName": The filename of the logo image
  */
 
- function get_template_A_info(user_info,result) {
+ function get_template_A_info(user_info) {
   const logoFileName = "marca-pucmm.jpg";
   //Limpiar saltos
   let str = "";
