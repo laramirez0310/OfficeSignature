@@ -224,8 +224,8 @@ function get_command_id() {
   let Enlace = "";
   let Seccion = "";
   let Nota = "";
-  
-  let str = "";
+
+  let str = ""; 
 
 for(let i = 0; i < datos.datos.length; i++)
     {
