@@ -171,7 +171,7 @@ function get_command_id() {
     };
       fetch("https://default73c9a419863d4226a83f7a200ad69b.e9.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/15/workflows/8e0dc4da953541c6af3b32bbe54b40e6/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=PRdRmuPRX7vTs8X03RmspDc-7zvXsKkQ7jbRHuvId_E", requestOptions)        
       .then(response => response.json())
-        .then(result => { dataFirma() })
+        .then(result => { dataFirma(result) })
         .catch(error => console.log('error', error));
     
   }
