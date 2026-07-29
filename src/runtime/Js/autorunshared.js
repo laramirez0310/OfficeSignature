@@ -224,6 +224,8 @@ function get_command_id() {
   let Enlace = "";
   let Seccion = "";
   let Nota = "";
+  
+  let str = "";
 
 for(let i = 0; i < datos.datos.length; i++)
     {
@@ -234,7 +236,7 @@ for(let i = 0; i < datos.datos.length; i++)
         Nota = datos.datos[i].Nota;
   
 
-  let str = "";
+
   let urlimg = "https://pucmm.edu.do/wp-content/uploads/2026/07/";//no fijo
   str +='<table border="0" cellpadding="1" cellspacing="1"><tbody><tr><td valign="top"><font size="3" color="#17365d" face="Arial">';
   //str +='<strong>'+ user_info.name +'</strong></font>';
