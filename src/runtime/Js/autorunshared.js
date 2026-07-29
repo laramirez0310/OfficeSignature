@@ -277,7 +277,7 @@ function get_command_id() {
         str +='<p style="margin:0"><font color="#7d7d7d" size="1" face="Arial">NOTA DE CONFIDENCIALIDAD: La información transmitida, incluidos los archivos adjuntos, está dirigida solo a la persona o entidad a la que ha sido remitida y puede contener información confidencial y/o privilegiada. Cualquier difusión u otro uso de la misma, o tomar cualquier acción basada en esta información por personas o entidades distintas al destinatario, está prohibido. Si ha recibido este mensaje por error, por favor contactar al remitente y destruya cualquier copia de esta información.<br>';
         str +='<br>'+ datos.datos[9].Nota  +'</font></p></td></tr></tbody></table>';
  }
-  console.log("autorunshared.js "+ str);
+  console.log("autorunshared.js sin logobase64 "+ str);
   // return object with signature HTML, logo image base64 string, and filename to reference it with.
   return {
     signature: str,
