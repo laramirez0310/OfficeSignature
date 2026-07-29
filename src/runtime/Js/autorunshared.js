@@ -285,7 +285,7 @@ function get_command_id() {
         str +='<img src="https://tinyurl.com/3wpytavy" width="14" height="14">&nbsp;&nbsp;';
         str +='<font color="#7F7F7F" size="1" face="Arial">No me imprimas si no es necesario.</font></td></tr><tr><td>';
         str +='<p style="margin:0"><font color="#7d7d7d" size="1" face="Arial">NOTA DE CONFIDENCIALIDAD: La información transmitida, incluidos los archivos adjuntos, está dirigida solo a la persona o entidad a la que ha sido remitida y puede contener información confidencial y/o privilegiada. Cualquier difusión u otro uso de la misma, o tomar cualquier acción basada en esta información por personas o entidades distintas al destinatario, está prohibido. Si ha recibido este mensaje por error, por favor contactar al remitente y destruya cualquier copia de esta información.<br>';
-        str +='<br>'+ datosFirma[100].nota  +'</font></p></td></tr></tbody></table>';
+        str +='<br>CONFIDENTIALITY NOTE: The information transmitted, including attachments, is intended only for the person or entity to which it is addressed and may contain confidential and/or privileged material. Any review, retransmission, dissemination or other use of, or taking of any action in reliance upon this information by persons or entities other than the intended recipient is prohibited. If you received this in error, please contact the sender and destroy any copies of this information.</font></p></td></tr></tbody></table>';
 
       /*  str +='</font></td></tr><tr><td><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="240" height="81">';
         str +='<a href="https://pucmm.edu.do/"><img src="'+ datosFirma[10].imagen +'" width="258" height="87" alt="Pontificia Universidad Católica Madre y Maestra"></a></td><td width="15"></td>';
@@ -303,9 +303,9 @@ function get_command_id() {
         str +='<img src="https://tinyurl.com/3wpytavy" width="14" height="14">&nbsp;&nbsp;';
         str +='<font color="#7F7F7F" size="1" face="Arial">No me imprimas si no es necesario.</font></td></tr><tr><td>';
         str +='<p style="margin:0"><font color="#7d7d7d" size="1" face="Arial">NOTA DE CONFIDENCIALIDAD: La información transmitida, incluidos los archivos adjuntos, está dirigida solo a la persona o entidad a la que ha sido remitida y puede contener información confidencial y/o privilegiada. Cualquier difusión u otro uso de la misma, o tomar cualquier acción basada en esta información por personas o entidades distintas al destinatario, está prohibido. Si ha recibido este mensaje por error, por favor contactar al remitente y destruya cualquier copia de esta información.<br>';
-        str +='<br>'+ datosFirma[100].nota  +'</font></p></td></tr></tbody></table>';*/
+        str +='<br>CONFIDENTIALITY NOTE: The information transmitted, including attachments, is intended only for the person or entity to which it is addressed and may contain confidential and/or privileged material. Any review, retransmission, dissemination or other use of, or taking of any action in reliance upon this information by persons or entities other than the intended recipient is prohibited. If you received this in error, please contact the sender and destroy any copies of this information.</font></p></td></tr></tbody></table>';*/
 
-  console.log("autorunshared.js sin logobase64 y objeto con datos "+ str);
+  console.log("autorunshared.js sin logobase64 "+ str);
   // return object with signature HTML, logo image base64 string, and filename to reference it with.
   return {
     signature: str,
