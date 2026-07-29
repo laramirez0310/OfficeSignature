@@ -210,10 +210,7 @@ function get_command_id() {
         
         if(Seccion === "social")
         {
-          console.log("Debe ser social: "+ Seccion);
-          console.log("strfirma limpio: "+ strfirma);
           strfirma +='<a class="social-icons" href="'+ Enlace +'" target="_blank"><img src="'+ Imagen +'" style="margin:2px;" alt="'+ textoAlt +'" width="24" height="25"></a>';
-            console.log("strfirma for: "+ strfirma);
         }
       }
        console.log("strfirma fuera for: "+ strfirma);
@@ -240,7 +237,7 @@ function get_command_id() {
 
  function get_template_A_info(user_info) {
   const logoFileName = "marca-pucmm.jpg"; 
-  
+  console.log("strfirma en get_template_A: "+ strfirma);
   let str = ""; 
 
         str +='<table border="0" cellpadding="1" cellspacing="1"><tbody><tr><td valign="top"><font size="3" color="#17365d" face="Arial">';
