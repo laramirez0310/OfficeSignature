@@ -273,8 +273,10 @@ function get_command_id() {
         str +='<a class="social-icons" href="http://www.twitter.com/pucmm/" target="_blank"><img src="https://tinyurl.com/yztwef8y" style="margin:2px;" alt="Twitter PUCMM" width="24" height="25"></a>';
         str +='<a class="social-icons" href="http://www.instagram.com/pucmm" target="_blank"><img src="https://tinyurl.com/3epmxcxc" style="margin:2px;" alt="Instagram PUCMM" width="24" height="25"></a>';
         str +='<a class="social-icons" href="http://www.youtube.com/pucmmtv/" target="_blank"><img src="https://tinyurl.com/2runapaz" style="margin:2px;" alt="Youtube PUCMM" width="24" height="25"></a>'; 
-        str +='<a class="social-icons" href="https://www.linkedin.com/edu/school?id=12020" target="_blank"><img src="https://tinyurl.com/44ns3caw" style="margin:2px;" alt="Linkedin PUCMM" width="24" height="25"></a></td></tr></tbody></table></td></tr><tr><td>';
+        str +='<a class="social-icons" href="https://www.linkedin.com/edu/school?id=12020" target="_blank"><img src="https://tinyurl.com/44ns3caw" style="margin:2px;" alt="Linkedin PUCMM" width="24" height="25"></a>
+
         */
+        str+='</td></tr></tbody></table></td></tr><tr><td>';
         str +='<img src="https://tinyurl.com/3wpytavy" width="14" height="14">&nbsp;&nbsp;';
         str +='<font color="#7F7F7F" size="1" face="Arial">No me imprimas si no es necesario.</font></td></tr><tr><td>';
         str +='<p style="margin:0"><font color="#7d7d7d" size="1" face="Arial">NOTA DE CONFIDENCIALIDAD: La información transmitida, incluidos los archivos adjuntos, está dirigida solo a la persona o entidad a la que ha sido remitida y puede contener información confidencial y/o privilegiada. Cualquier difusión u otro uso de la misma, o tomar cualquier acción basada en esta información por personas o entidades distintas al destinatario, está prohibido. Si ha recibido este mensaje por error, por favor contactar al remitente y destruya cualquier copia de esta información.<br>';
