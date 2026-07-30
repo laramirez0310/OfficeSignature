@@ -55,7 +55,7 @@ function checkSignature(eventObj) {
  */
 function insert_auto_signature(compose_type, user_info, eventObj) {
   let template_name = get_template_name(compose_type);
-  let signature_info = get_signature_info(template_name, user_info);
+  let signature_info = await get_signature_info(template_name, user_info);
     addTemplateSignature(signature_info, eventObj);
 }
 
@@ -142,8 +142,8 @@ function get_template_name(compose_type) {
  * @param {*} user_info Information details about the user
  * @returns HTML signature in requested template format
  */
-function get_signature_info(template_name, user_info) {
-         cargar_datos();
+async function get_signature_info(template_name, user_info) {
+       await cargar_datos();
   return get_template_A_info(user_info);
 }
 
@@ -169,7 +169,7 @@ function get_command_id() {
       body: "",
       redirect: 'follow'
     };
-      fetch("https://default73c9a419863d4226a83f7a200ad69b.e9.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/15/workflows/8e0dc4da953541c6af3b32bbe54b40e6/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=PRdRmuPRX7vTs8X03RmspDc-7zvXsKkQ7jbRHuvId_E", requestOptions)        
+      return fetch("https://default73c9a419863d4226a83f7a200ad69b.e9.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/15/workflows/8e0dc4da953541c6af3b32bbe54b40e6/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=PRdRmuPRX7vTs8X03RmspDc-7zvXsKkQ7jbRHuvId_E", requestOptions)        
       .then(response => response.json())
         .then(result => { dataFirma(result) }) 
         .catch(error => console.log('error', error));
