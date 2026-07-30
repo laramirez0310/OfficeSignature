@@ -265,12 +265,12 @@ function get_command_id() {
         str +='<p><font size="2" face="Arial"><strong>Campus de Santiago:</strong><br>Autopista Duarte km. 1½, Santiago, R.D.';
         str +='<br><br><strong>Campus de Santo Domingo:</strong><br>Av. Abraham Lincoln esq. Av. Simón Bolívar, Santo Domingo, R.D.</font></p></td></tr></tbody></table></td></tr><tr><td height="70" align="left" valign="middle">';
         str +='<table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="width:auto; height:auto;">';
-        str +='<a href="https://pucmm.edu.do/" ><img src="https://pucmm.edu.do/wp-content/uploads/2026/07/banner.jpg" style="width:auto; height:auto;" alt="Banner PUCMM"> </a>';
+        str +='<a href="https://pucmm.edu.do/" ><img src="https://pucmm.edu.do/wp-content/uploads/2026/07/banner.png" style="width:auto; height:auto;" alt="Banner PUCMM"> </a>';
         str +='</td><td width="15"></td><td class="social" style="display: flex; align-items: center;justify-content: space-around;" width="150" height="70">';
 
         str += strfirma;
         /*str +='<a class="social-icons" href="http://www.facebook.com/pucmm/" target="_blank"><img style="margin:2px;" src="https://tinyurl.com/2hvvmp2d" alt="Facebook PUCMM" width="24" height="24"></a>';
-        str +='<a class="social-icons" href="'+ datosFirma[40].enlace +'" target="_blank"><img src="https://tinyurl.com/yztwef8y" style="margin:2px;" alt="Twitter PUCMM" width="24" height="25"></a>';
+        str +='<a class="social-icons" href="http://www.twitter.com/pucmm/" target="_blank"><img src="https://tinyurl.com/yztwef8y" style="margin:2px;" alt="Twitter PUCMM" width="24" height="25"></a>';
         str +='<a class="social-icons" href="http://www.instagram.com/pucmm" target="_blank"><img src="https://tinyurl.com/3epmxcxc" style="margin:2px;" alt="Instagram PUCMM" width="24" height="25"></a>';
         str +='<a class="social-icons" href="http://www.youtube.com/pucmmtv/" target="_blank"><img src="https://tinyurl.com/2runapaz" style="margin:2px;" alt="Youtube PUCMM" width="24" height="25"></a>'; 
         str +='<a class="social-icons" href="https://www.linkedin.com/edu/school?id=12020" target="_blank"><img src="https://tinyurl.com/44ns3caw" style="margin:2px;" alt="Linkedin PUCMM" width="24" height="25"></a></td></tr></tbody></table></td></tr><tr><td>';
@@ -281,7 +281,7 @@ function get_command_id() {
         str +='<br>CONFIDENTIALITY NOTE: The information transmitted, including attachments, is intended only for the person or entity to which it is addressed and may contain confidential and/or privileged material. Any review, retransmission, dissemination or other use of, or taking of any action in reliance upon this information by persons or entities other than the intended recipient is prohibited. If you received this in error, please contact the sender and destroy any copies of this information.</font></p></td></tr></tbody></table>';
 
       /*  str +='</font></td></tr><tr><td><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="240" height="81">';
-        str +='<a href="https://pucmm.edu.do/"><img src="'+ datosFirma[10].imagen +'" width="258" height="87" alt="Pontificia Universidad Católica Madre y Maestra"></a></td><td width="15"></td>';
+        str +='<a href="https://pucmm.edu.do/"><img src="https://pucmm.edu.do/wp-content/uploads/2026/07/marca-pucmm.jpg" width="258" height="87" alt="Pontificia Universidad Católica Madre y Maestra"></a></td><td width="15"></td>';
         str +='<td style="padding:0 0 0 15px;border-left-style:solid;border-left-width:1pt;border-left-color:#7f7f7f">';
         str +='<p><font size="2" face="Arial"><strong>Campus de Santiago:</strong><br>Autopista Duarte km. 1½, Santiago, R.D.';
         str +='<br><br><strong>Campus de Santo Domingo:</strong><br>Av. Abraham Lincoln esq. Av. Simón Bolívar, Santo Domingo, R.D.</font></p></td></tr></tbody></table></td></tr><tr><td height="70" align="left" valign="middle">';
@@ -289,7 +289,7 @@ function get_command_id() {
         str +='<a href="https://pucmm.edu.do/" ><img src="https://laramirez0310.github.io/OfficeSignature/assets/bannerRankingqs.png" style="width:auto; height:auto;" alt="Banner PUCMM"> </a>';
         str +='</td><td width="15"></td><td class="social" style="display: flex; align-items: center;justify-content: space-around;" width="150" height="70">';
         str +='<a class="social-icons" href="http://www.facebook.com/pucmm/" target="_blank"><img style="margin:2px;" src="https://tinyurl.com/2hvvmp2d" alt="Facebook PUCMM" width="24" height="24"></a>';
-        str +='<a class="social-icons" href="'+ datosFirma[40].enlace +'" target="_blank"><img src="https://tinyurl.com/yztwef8y" style="margin:2px;" alt="Twitter PUCMM" width="24" height="25"></a>';
+        str +='<a class="social-icons" href="http://www.twitter.com/pucmm/" target="_blank"><img src="https://tinyurl.com/yztwef8y" style="margin:2px;" alt="Twitter PUCMM" width="24" height="25"></a>';
         str +='<a class="social-icons" href="http://www.instagram.com/pucmm" target="_blank"><img src="https://tinyurl.com/3epmxcxc" style="margin:2px;" alt="Instagram PUCMM" width="24" height="25"></a>';
         str +='<a class="social-icons" href="http://www.youtube.com/pucmmtv/" target="_blank"><img src="https://tinyurl.com/2runapaz" style="margin:2px;" alt="Youtube PUCMM" width="24" height="25"></a>'; 
         str +='<a class="social-icons" href="https://www.linkedin.com/edu/school?id=12020" target="_blank"><img src="https://tinyurl.com/44ns3caw" style="margin:2px;" alt="Linkedin PUCMM" width="24" height="25"></a></td></tr></tbody></table></td></tr><tr><td>';
