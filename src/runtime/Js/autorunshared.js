@@ -203,7 +203,7 @@ function get_command_id() {
         Orden = datos.datos[i].Orden;
         Imagen = datos.datos[i].Imagen;      
         Enlace = datos.datos[i].Enlace;
-        Seccion = datos.datos[i].Seccion.Value;
+        Seccion = datos.datos[i].Seccion?.Value || "";
         Nota = datos.datos[i].Nota;
         textoAlt = datos.datos[i].Texto_alternativo;
 
