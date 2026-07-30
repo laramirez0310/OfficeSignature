@@ -158,7 +158,7 @@ function get_command_id() {
   return "MRCS_TpBtn0";
 }
 
-  function cargar_datos() {
+ async function cargar_datos() {
 
     let myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
