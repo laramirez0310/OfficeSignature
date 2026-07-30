@@ -211,9 +211,10 @@ function get_command_id() {
         /*console.log("Indice: "+ i);
         console.log("Orden: "+ Orden);
         console.log("Imagen: "+ Imagen);
-        console.log("Enlace: "+ Enlace);
-        console.log("Seccion: "+ Seccion);
-        console.log("Nota: "+ Nota);*/
+        console.log("Enlace: "+ Enlace);*/
+        console.log("Value Seccion: "+ Seccion);
+        console.log("Seccion: "+ datos.datos[i].Seccion);
+        //console.log("Nota: "+ Nota);
         
         if(Seccion.toUpperCase() === "LOGO")
         {
