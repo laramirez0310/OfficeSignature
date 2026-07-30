@@ -182,6 +182,7 @@ function get_command_id() {
   let firmasocial="";
   let firmalogo="";
   let firmabanner="";
+  let firmanota="";
   
   function dataFirma(datos) {
     firmasocial="";
@@ -202,7 +203,7 @@ function get_command_id() {
         Orden = datos.datos[i].Orden;
         Imagen = datos.datos[i].Imagen;      
         Enlace = datos.datos[i].Enlace;
-        Seccion =  toUpperCase(datos.datos[i].Seccion);
+        Seccion = datos.datos[i].Seccion;
         Nota = datos.datos[i].Nota;
         textoAlt = datos.datos[i].Texto_alternativo;
 
@@ -214,24 +215,24 @@ function get_command_id() {
         console.log("Seccion: "+ Seccion);
         console.log("Nota: "+ Nota);*/
         
-        if(Seccion === "LOGO")
+        if(Seccion.toUpperCase() === "LOGO")
         {
           firmalogo +='<a href="'+ Enlace +'"> <img src="'+ Imagen +'" alt="'+ textoAlt +'" width="258" height="87"></a>';
         
         }
 
-        if(Seccion === "BANNER")
+        if(Seccion.toUpperCase() === "BANNER")
         {
           firmabanner +='<a href="'+ Enlace +'" ><img src="'+ Imagen +'" style="width:auto; height:auto;" alt="'+ textoAlt +'"> </a>';
 
         }
 
-       if(Seccion === "SOCIAL")
+       if(Seccion.toUpperCase() === "SOCIAL")
         {
           firmasocial +='<a class="social-icons" href="'+ Enlace +'" target="_blank"><img src="'+ Imagen +'" style="margin:2px;" alt="'+ textoAlt +'" width="24" height="25"></a>';
         }
 
-        If(Seccion === "NOTA")
+        If(Seccion.toUpperCase() === "NOTA")
         {
           firmanota +='<font color="#7F7F7F" size="1" face="Arial">'+ Nota +'</font><br><br>';
         }
