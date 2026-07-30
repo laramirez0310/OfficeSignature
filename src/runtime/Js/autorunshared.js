@@ -197,7 +197,7 @@ function get_command_id() {
    
 
     //console.log("datos.length: "+ datos.datos.length);
-      for(let i = 0; i < datos.datos.length; i++)
+      for(let i = 0; i <= datos.datos.length; i++)
       {
         
         Orden = datos.datos[i].Orden;
@@ -213,8 +213,7 @@ function get_command_id() {
         console.log("Imagen: "+ Imagen);
         console.log("Enlace: "+ Enlace);*/
         console.log("Value Seccion: "+ Seccion);
-        console.log("Seccion: "+ datos.datos[i].Seccion);
-        //console.log("Nota: "+ Nota);
+        console.log("Nota: "+ Nota);
         
         if(Seccion.toUpperCase() === "LOGO")
         {
