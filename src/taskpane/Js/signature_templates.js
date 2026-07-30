@@ -1,54 +1,142 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
 
+  function cargar_datos_str() {
+
+    let myHeaders = new Headers();
+    myHeaders.append("Content-Type", "application/json");
+
+    let requestOptions = {
+      method: 'POST',
+      headers: myHeaders,
+      body: "",
+      redirect: 'follow'
+    };
+    
+      fetch("https://default73c9a419863d4226a83f7a200ad69b.e9.environment.api.powerplatform.com:443/powerautomate/automations/direct/cu/15/workflows/8e0dc4da953541c6af3b32bbe54b40e6/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=PRdRmuPRX7vTs8X03RmspDc-7zvXsKkQ7jbRHuvId_E", requestOptions)        
+      .then(response => response.json())
+        .then(result => { dataFirma(result) }) 
+        .catch(error => console.log('error', error));
+    
+  }
+
+  
+  let firmasocial="";
+  let firmalogo="";
+  let firmabanner="";
+  let firmanota="";
+  
+  function dataFirma(datos) {
+    firmasocial="";
+    firmalogo="";
+    firmabanner="";
+    let Orden = 0.0;
+    let Imagen = "";      
+    let Enlace = "";
+    let Seccion = "";
+    let Nota = "";
+    let textoAlt="";
+   
+
+    //console.log("datos.length: "+ datos.datos.length);
+      for(let i = 0; i < datos.datos.length; i++)
+      {
+        
+        Orden = datos.datos[i].Orden;
+        Imagen = datos.datos[i].Imagen;      
+        Enlace = datos.datos[i].Enlace;
+        Seccion = datos.datos[i].Seccion?.Value || "";
+        Nota = datos.datos[i].Nota;
+        textoAlt = datos.datos[i].Texto_alternativo;
+
+
+        console.log("Indice signature_template: "+ i);
+        console.log("Orden signature_template: "+ Orden);
+        console.log("Imagen signature_template: "+ Imagen);
+        console.log("Enlace signature_template: "+ Enlace);
+        console.log("Value Seccion signature_template: "+ Seccion);
+        console.log("Nota signature_template: "+ Nota);
+        
+        if(Seccion.toUpperCase() === "LOGO")
+        {
+          firmalogo +='<a href="'+ Enlace +'"> <img src="'+ Imagen +'" alt="'+ textoAlt +'" width="258" height="87"></a>';
+        
+        }
+
+        if(Seccion.toUpperCase() === "BANNER")
+        {
+          firmabanner +='<a href="'+ Enlace +'" ><img src="'+ Imagen +'" style="width:auto; height:auto;" alt="'+ textoAlt +'"> </a>';
+
+        }
+
+       if(Seccion.toUpperCase() === "SOCIAL")
+        {
+          firmasocial +='<a class="social-icons" href="'+ Enlace +'" target="_blank"><img src="'+ Imagen +'" style="margin:2px;" alt="'+ textoAlt +'" width="24" height="25"></a>';
+        }
+
+        if(Seccion.toUpperCase() === "NOTA")
+        {
+          firmanota +='<font color="#7F7F7F" size="1" face="Arial">'+ Nota +'</font><br><br>';
+        }
+      }
+   }
+
+
+
 function get_template_A_str(user_info)
 {
-  let str = "";
+  let str = ""; 
 
-  str +='<table border="0" cellpadding="1" cellspacing="1"><tbody><tr><td valign="top"><font size="3" color="#17365d" face="Arial">';
-  //str +='<strong>'+ user_info.name +'</strong></font>';
-  str +='<strong>'+ user_info.name + (is_valid_data(user_info.GrdoAcad) ? ", " + user_info.GrdoAcad : "") +'</strong></font>';
-  str +='<br><font size="2" face="Arial">'+ user_info.job +'</font><br>';
-  str +='<font size="3" color="#17365d" face="Arial">';
-  str += is_valid_data(user_info.pronoun) ? "<strong>" + user_info.pronoun : "";
-  str += '</strong></font><br><font size="2" face="Arial">Tel.:';
-  str += is_valid_data(user_info.phone) ? user_info.phone + "<br/>" : "";
-  str += user_info.email;
-  str += '<br>';
-  /*
-  str += is_valid_data(user_info.InfoAd1) ? (user_info.InfoAd1.startsWith('http') ? '<a href="' + user_info.InfoAd1 + '">' + user_info.InfoAd1 + '</a><br>' : '<span>' + user_info.InfoAd1 + '</span><br>') : "";
-  str += is_valid_data(user_info.InfoAd2) ? (user_info.InfoAd2.startsWith('http') ? '<a href="' + user_info.InfoAd2 + '">' + user_info.InfoAd2 + '</a><br>' : '<span>' + user_info.InfoAd2 + '</span><br>') : "";
-  str += is_valid_data(user_info.InfoAd3) ? (user_info.InfoAd3.startsWith('http') ? '<a href="' + user_info.InfoAd3 + '">' + user_info.InfoAd3 + '</a><br>' : '<span>' + user_info.InfoAd3 + '</span><br>') : "";
-*/
-  for (let i = 1; i <= 15; i++)
-  {
-    let valor = user_info['InfoAd' + i];
+        str +='<table border="0" cellpadding="1" cellspacing="1"><tbody><tr><td valign="top"><font size="3" color="#17365d" face="Arial">';
+        str +='<strong>'+ user_info.name +'</strong></font>';
+        //str +='<strong>'+ user_info.name + (is_valid_data(user_info.GrdoAcad) ? ", " + user_info.GrdoAcad : "") +'</strong></font>';
+        str +='<br><font size="2" face="Arial">'+ user_info.job +'</font><br>';
+        str +='<font size="3" color="#17365d" face="Arial">';
+        str += is_valid_data(user_info.pronoun) ? "<strong>" + user_info.pronoun : "";
+        str += '</strong></font><br><font size="2" face="Arial">Tel.:';
+        str += is_valid_data(user_info.phone) ? user_info.phone + "<br/>" : "";
+        str += user_info.email;
+        str += '<br>';
+        /*
+        str += is_valid_data(user_info.InfoAd1) ? (user_info.InfoAd1.startsWith('http') ? '<a href="' + user_info.InfoAd1 + '">' + user_info.InfoAd1 + '</a><br>' : '<span>' + user_info.InfoAd1 + '</span><br>') : "";
+        str += is_valid_data(user_info.InfoAd2) ? (user_info.InfoAd2.startsWith('http') ? '<a href="' + user_info.InfoAd2 + '">' + user_info.InfoAd2 + '</a><br>' : '<span>' + user_info.InfoAd2 + '</span><br>') : "";
+        str += is_valid_data(user_info.InfoAd3) ? (user_info.InfoAd3.startsWith('http') ? '<a href="' + user_info.InfoAd3 + '">' + user_info.InfoAd3 + '</a><br>' : '<span>' + user_info.InfoAd3 + '</span><br>') : "";
+        
+        for (let i = 1; i <= 15; i++)
+        {
+          let valor = user_info['InfoAd' + i];
 
-    str += is_valid_data(valor)
-      ? (valor.startsWith('http')
-          ? '<a href="' + valor + '">' + valor + '</a><br>'
-          : '<span>' + valor + '</span><br>')
-      : "";
-  }
-  str +='</font></td></tr><tr><td><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="240" height="81">';
-  str +='<a href="https://pucmm.edu.do/"><img src="https://pucmm.edu.do/wp-content/uploads/2026/07/marca-pucmm.jpg" width="258" height="87" alt="Pontificia Universidad Católica Madre y Maestra"></a></td><td width="15"></td>';
-  str +='<td style="padding:0 0 0 15px;border-left-style:solid;border-left-width:1pt;border-left-color:#7f7f7f">';
-  str +='<p><font size="2" face="Arial"><strong>Campus de Santiago:</strong><br>Autopista Duarte km. 1½, Santiago, R.D.';
-  str +='<br><br><strong>Campus de Santo Domingo:</strong><br>Av. Abraham Lincoln esq. Av. Simón Bolívar, Santo Domingo, R.D.</font></p></td></tr></tbody></table></td></tr><tr><td height="70" align="left" valign="middle">';
-  str +='<table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="600" height="70">';
-  str +='<a href="https://pucmm.edu.do/" ><img src="https://laramirez0310.github.io/OfficeSignature/assets/bannerRankingqs.png" width="Auto" height="Auto" alt="Banner PUCMM"> </a>';
-  str +='</td><td width="15"></td><td class="social" style="display: flex; align-items: center;justify-content: space-around;" width="150" height="70">';
-  str +='<a class="social-icons" href="http://www.facebook.com/pucmm/" target="_blank"><img style="margin:2px;" src="https://pucmm.edu.do/wp-content/uploads/2026/07/facebook.png" alt="Facebook PUCMM" width="24" height="24"></a>';
-  str +='<a class="social-icons" href="http://twitter.com/pucmm/" target="_blank"><img src="https://pucmm.edu.do/wp-content/uploads/2026/07/twitter.png" style="margin:2px;" alt="Twitter PUCMM" width="24" height="25"></a>';
-  str +='<a class="social-icons" href="http://www.instagram.com/pucmm" target="_blank"><img src="https://pucmm.edu.do/wp-content/uploads/2026/07/instagram.png" style="margin:2px;" alt="Instagram PUCMM" width="24" height="25"></a>';
-  str +='<a class="social-icons" href="http://www.youtube.com/pucmmtv/" target="_blank"><img src="https://pucmm.edu.do/wp-content/uploads/2026/07/youtube.png" style="margin:2px;" alt="Youtube PUCMM" width="24" height="25"></a>'; 
-  str +='<a class="social-icons" href="https://www.linkedin.com/edu/school?id=12020" target="_blank"><img src="https://pucmm.edu.do/wp-content/uploads/2026/07/linkedin.png" style="margin:2px;" alt="Linkedin PUCMM" width="24" height="25"></a></td></tr></tbody></table></td></tr><tr><td>';
-  str +='<img src="https://pucmm.edu.do/wp-content/uploads/2026/07/Green.gif" width="14" height="14">&nbsp;&nbsp;';
-  str +='<font color="#7F7F7F" size="1" face="Arial">No me imprimas si no es necesario.</font></td></tr><tr><td>';
-  str +='<p style="margin:0"><font color="#7d7d7d" size="1" face="Arial">NOTA DE CONFIDENCIALIDAD: La información transmitida, incluidos los archivos adjuntos, está dirigida solo a la persona o entidad a la que ha sido remitida y puede contener información confidencial y/o privilegiada. Cualquier difusión u otro uso de la misma, o tomar cualquier acción basada en esta información por personas o entidades distintas al destinatario, está prohibido. Si ha recibido este mensaje por error, por favor contactar al remitente y destruya cualquier copia de esta información.<br>';
-  str +='<br>CONFIDENTIALITY NOTE: The information transmitted, including attachments, is intended only for the person or entity to which it is addressed and may contain confidential and/or privileged material. Any review, retransmission, dissemination or other use of, or taking of any action in reliance upon this information by persons or entities other than the intended recipient is prohibited. If you received this in error, please contact the sender and destroy any copies of this information.</font></p></td></tr></tbody></table>';
-  
-  //console.log("signature_templates " + str)
+          str += is_valid_data(valor)
+            ? (valor.startsWith('http')
+                ? '<a href="' + valor + '">' + valor + '</a><br>'
+                : '<span>' + valor + '</span><br>')
+            : "";
+        }*/
+
+        str +='</font></td></tr><tr><td><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="240" height="81">';
+        str += firmalogo;
+
+        str+= '</td><td width="15"></td>';
+        str +='<td style="padding:0 0 0 15px;border-left-style:solid;border-left-width:1pt;border-left-color:#7f7f7f">';
+        str +='<p><font size="2" face="Arial"><strong>Campus de Santiago:</strong><br>Autopista Duarte km. 1½, Santiago, R.D.';
+        str +='<br><br><strong>Campus de Santo Domingo:</strong><br>Av. Abraham Lincoln esq. Av. Simón Bolívar, Santo Domingo, R.D.</font></p></td></tr></tbody></table></td></tr><tr><td height="70" align="left" valign="middle">';
+        str +='<table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="width:auto; height:auto;">';
+        
+        str += firmabanner;
+
+        str +='</td><td width="15"></td><td class="social" style="display: flex; align-items: center;justify-content: space-around;" width="150" height="70">';
+
+        str += firmasocial;
+
+        str+='</td></tr></tbody></table></td></tr><tr><td>';
+        str +='<img src="https://tinyurl.com/3wpytavy" width="14" height="14">&nbsp;&nbsp;';
+        str +='<font color="#7F7F7F" size="1" face="Arial">No me imprimas si no es necesario.</font></td></tr><tr><td>';
+
+        str +='<p style="margin:0">'+ firmanota;
+        
+        str +='</p></td></tr></tbody></table>';
+
+   console.log("signature_template_A: " + str)
   return str;
 }
 
