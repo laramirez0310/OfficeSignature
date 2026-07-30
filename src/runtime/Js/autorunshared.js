@@ -215,7 +215,6 @@ function get_command_id() {
           strfirma +='<a class="social-icons" href="'+ Enlace +'" target="_blank"><img src="'+ Imagen +'" style="margin:2px;" alt="'+ textoAlt +'" width="24" height="25"></a>';
         }
       }
-       console.log("strfirma fuera for: "+ strfirma);
    }
 
 
@@ -232,7 +231,6 @@ function get_command_id() {
 
  function get_template_A_info(user_info) {
   const logoFileName = "marca-pucmm.jpg"; 
-  console.log("strfirma en get_template_A: "+ strfirma);
   let str = ""; 
 
         str +='<table border="0" cellpadding="1" cellspacing="1"><tbody><tr><td valign="top"><font size="3" color="#17365d" face="Arial">';
@@ -267,7 +265,7 @@ function get_command_id() {
         str +='<p><font size="2" face="Arial"><strong>Campus de Santiago:</strong><br>Autopista Duarte km. 1½, Santiago, R.D.';
         str +='<br><br><strong>Campus de Santo Domingo:</strong><br>Av. Abraham Lincoln esq. Av. Simón Bolívar, Santo Domingo, R.D.</font></p></td></tr></tbody></table></td></tr><tr><td height="70" align="left" valign="middle">';
         str +='<table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="width:auto; height:auto;">';
-        str +='<a href="https://pucmm.edu.do/" ><img src="https://laramirez0310.github.io/OfficeSignature/assets/bannerRankingqs.png" style="width:auto; height:auto;" alt="Banner PUCMM"> </a>';
+        str +='<a href="https://pucmm.edu.do/" ><img src="https://pucmm.edu.do/wp-content/uploads/2026/07/banner.jpg" style="width:auto; height:auto;" alt="Banner PUCMM"> </a>';
         str +='</td><td width="15"></td><td class="social" style="display: flex; align-items: center;justify-content: space-around;" width="150" height="70">';
 
         str += strfirma;
