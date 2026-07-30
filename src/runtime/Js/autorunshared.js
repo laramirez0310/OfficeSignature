@@ -53,9 +53,9 @@ function checkSignature(eventObj) {
  * @param {*} user_info Information details about the user
  * @param {*} eventObj Office event object
  */
- function insert_auto_signature(compose_type, user_info, eventObj) {
+ async function insert_auto_signature(compose_type, user_info, eventObj) {
   let template_name = get_template_name(compose_type);
-  let signature_info =  get_signature_info(template_name, user_info);
+  let signature_info = await get_signature_info(template_name, user_info);
   
   addTemplateSignature(signature_info, eventObj);
 }
@@ -143,8 +143,8 @@ function get_template_name(compose_type) {
  * @param {*} user_info Information details about the user
  * @returns HTML signature in requested template format
  */
- function get_signature_info(template_name, user_info) {
-        cargar_datos();
+ async function get_signature_info(template_name, user_info) {
+        await cargar_datos();
   return get_template_A_info(user_info);
 }
 
@@ -236,8 +236,8 @@ function get_command_id() {
   let str = ""; 
 
         str +='<table border="0" cellpadding="1" cellspacing="1"><tbody><tr><td valign="top"><font size="3" color="#17365d" face="Arial">';
-        //str +='<strong>'+ user_info.name +'</strong></font>';
-        str +='<strong>'+ user_info.name + (is_valid_data(user_info.GrdoAcad) ? ", " + user_info.GrdoAcad : "") +'</strong></font>';
+        str +='<strong>'+ user_info.name +'</strong></font>';
+        //str +='<strong>'+ user_info.name + (is_valid_data(user_info.GrdoAcad) ? ", " + user_info.GrdoAcad : "") +'</strong></font>';
         str +='<br><font size="2" face="Arial">'+ user_info.job +'</font><br>';
         str +='<font size="3" color="#17365d" face="Arial">';
         str += is_valid_data(user_info.pronoun) ? "<strong>" + user_info.pronoun : "";
@@ -249,7 +249,7 @@ function get_command_id() {
         str += is_valid_data(user_info.InfoAd1) ? (user_info.InfoAd1.startsWith('http') ? '<a href="' + user_info.InfoAd1 + '">' + user_info.InfoAd1 + '</a><br>' : '<span>' + user_info.InfoAd1 + '</span><br>') : "";
         str += is_valid_data(user_info.InfoAd2) ? (user_info.InfoAd2.startsWith('http') ? '<a href="' + user_info.InfoAd2 + '">' + user_info.InfoAd2 + '</a><br>' : '<span>' + user_info.InfoAd2 + '</span><br>') : "";
         str += is_valid_data(user_info.InfoAd3) ? (user_info.InfoAd3.startsWith('http') ? '<a href="' + user_info.InfoAd3 + '">' + user_info.InfoAd3 + '</a><br>' : '<span>' + user_info.InfoAd3 + '</span><br>') : "";
-        */
+        
         for (let i = 1; i <= 15; i++)
         {
           let valor = user_info['InfoAd' + i];
@@ -259,7 +259,8 @@ function get_command_id() {
                 ? '<a href="' + valor + '">' + valor + '</a><br>'
                 : '<span>' + valor + '</span><br>')
             : "";
-        }
+        }*/
+
         str +='</font></td></tr><tr><td><table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td width="240" height="81">';
         str +='<a href="https://pucmm.edu.do/"><img src="https://pucmm.edu.do/wp-content/uploads/2026/07/marca-pucmm.jpg" width="258" height="87" alt="Pontificia Universidad Católica Madre y Maestra"></a></td><td width="15"></td>';
         str +='<td style="padding:0 0 0 15px;border-left-style:solid;border-left-width:1pt;border-left-color:#7f7f7f">';
