@@ -37,8 +37,6 @@
     let Nota = "";
     let textoAlt="";
    
-
-    //console.log("datos.length: "+ datos.datos.length);
       for(let i = 0; i < datos.datos.length; i++)
       {
         
@@ -48,14 +46,6 @@
         Seccion = datos.datos[i].Seccion?.Value || "";
         Nota = datos.datos[i].Nota;
         textoAlt = datos.datos[i].Texto_alternativo;
-
-
-        console.log("Indice signature_template: "+ i);
-        console.log("Orden signature_template: "+ Orden);
-        console.log("Imagen signature_template: "+ Imagen);
-        console.log("Enlace signature_template: "+ Enlace);
-        console.log("Value Seccion signature_template: "+ Seccion);
-        console.log("Nota signature_template: "+ Nota);
         
         if(Seccion.toUpperCase() === "LOGO")
         {
@@ -136,7 +126,7 @@ function get_template_A_str(user_info)
         
         str +='</p></td></tr></tbody></table>';
 
-   console.log("signature_template_A: " + str)
+   //console.log("signature_template_A: " + str)
   return str;
 }
 

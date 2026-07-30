@@ -113,7 +113,7 @@ function test_template_A()
 {
 	let str = get_template_A_str(_user_info);
 	//let str = get_template_A_info(_user_info);
-	console.log("test_template_A_str - " + str);
+	//console.log("test_template_A_str - " + str);
 
 	insert_signature(str);
 }
