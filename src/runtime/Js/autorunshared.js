@@ -56,7 +56,8 @@ function checkSignature(eventObj) {
 async function insert_auto_signature(compose_type, user_info, eventObj) {
   let template_name = get_template_name(compose_type);
   let signature_info = await get_signature_info(template_name, user_info);
-    addTemplateSignature(signature_info, eventObj);
+  
+  addTemplateSignature(signature_info, eventObj);
 }
 
 /**
@@ -86,7 +87,10 @@ function addTemplateSignature(signatureDetails, eventObj, signatureImageBase64) 
             asyncContext: eventObj,
           },
           function (asyncResult) {
-            asyncResult.asyncContext.completed();
+            //asyncResult.asyncContext.completed();
+            if (asyncResult.asyncContext && asyncResult.asyncContext.completed) {
+              asyncResult.asyncContext.completed();
+            }
           }
         );
       }
@@ -100,7 +104,10 @@ function addTemplateSignature(signatureDetails, eventObj, signatureImageBase64) 
         asyncContext: eventObj,
       },
       function (asyncResult) {
-        asyncResult.asyncContext.completed();
+        //asyncResult.asyncContext.completed();
+        if (asyncResult.asyncContext && asyncResult.asyncContext.completed) {
+              asyncResult.asyncContext.completed();
+            }
       }
     );
   }
@@ -189,7 +196,7 @@ function get_command_id() {
  let strfirma="";
 
   function dataFirma(datos) {
-
+    strfirma="";
     let Orden = 0.0;
     let Imagen = "";      
     let Enlace = "";
