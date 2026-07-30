@@ -197,7 +197,7 @@ function get_command_id() {
    
 
     //console.log("datos.length: "+ datos.datos.length);
-      for(let i = 0; i <= datos.datos.length; i++)
+      for(let i = 0; i < datos.datos.length; i++)
       {
         
         Orden = datos.datos[i].Orden;
