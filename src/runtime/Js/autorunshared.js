@@ -242,7 +242,7 @@ function get_command_id() {
 
         if(Seccion.toUpperCase() === "ECO")
         {
-          firmaeco +='<img src="'+ Enlace +'" width="14" height="14">'
+          firmaeco +='<img src="'+ Imagen +'" width="14" height="14">'
         }
       }
    }
