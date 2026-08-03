@@ -183,11 +183,14 @@ function get_command_id() {
   let firmalogo="";
   let firmabanner="";
   let firmanota="";
-  
+  let firmaeco="";
+
   function dataFirma(datos) {
     firmasocial="";
     firmalogo="";
     firmabanner="";
+    firmanota="";
+    firmaeco="";
     let Orden = 0.0;
     let Imagen = "";      
     let Enlace = "";
@@ -235,6 +238,11 @@ function get_command_id() {
         if(Seccion.toUpperCase() === "NOTA")
         {
           firmanota +='<font color="#7F7F7F" size="1" face="Arial">'+ Nota +'</font><br><br>';
+        }
+
+        if(Seccion.toUpperCase() === "ECO")
+        {
+          firmaeco +='<img src="'+ Enlace +'" width="14" height="14">'
         }
       }
    }
@@ -297,7 +305,7 @@ function get_command_id() {
         str += firmasocial;
 
         str+='</td></tr></tbody></table></td></tr><tr><td>';
-        str +='<img src="https://tinyurl.com/3wpytavy" width="14" height="14">&nbsp;&nbsp;';
+        str += firmaeco + '&nbsp;&nbsp;';
         str +='<font color="#7F7F7F" size="1" face="Arial">No me imprimas si no es necesario.</font></td></tr><tr><td>';
 
         str +='<p style="margin:0">'+ firmanota;
