@@ -305,7 +305,7 @@ function get_command_id() {
         str += firmasocial;
 
         str+='</td></tr></tbody></table></td></tr><tr><td>';
-        str += firmaeco + '&nbsp;&nbsp;';
+        str += firmaeco + '&nbsp;&nbsp;' ;
         str +='<font color="#7F7F7F" size="1" face="Arial">No me imprimas si no es necesario.</font></td></tr><tr><td>';
 
         str +='<p style="margin:0">'+ firmanota;
