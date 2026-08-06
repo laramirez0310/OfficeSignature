@@ -27,6 +27,7 @@
   let firmabanner="";
   let firmanota="";
   let firmaeco="";
+  let firmadir="";
   
   function dataFirma(datos) {
     firmasocial="";
@@ -34,6 +35,8 @@
     firmabanner="";
     firmaeco="";
     firmanota="";
+    firmadir="";
+
     let Orden = 0.0;
     let Imagen = "";      
     let Enlace = "";
@@ -57,6 +60,11 @@
         
         }
 
+        if(Seccion.toUpperCase() === "DIRECCION")
+        {
+          firmadir +='<strong>'+textoAlt+'</strong><br>'+ Nota +'<br><br>';
+        }
+
         if(Seccion.toUpperCase() === "BANNER")
         {
           firmabanner +='<a href="'+ Enlace +'" ><img src="'+ Imagen +'" style="width:auto; height:auto;" alt="'+ textoAlt +'"> </a>';
@@ -68,15 +76,18 @@
           firmasocial +='<a class="social-icons" href="'+ Enlace +'" target="_blank"><img src="'+ Imagen +'" style="margin:2px;" alt="'+ textoAlt +'" width="24" height="25"></a>';
         }
 
+        
+        if(Seccion.toUpperCase() === "ECO")
+        {
+          firmaeco +='<img src="'+ Imagen +'" width="14" height="14">'
+        }
+
         if(Seccion.toUpperCase() === "NOTA")
         {
           firmanota +='<font color="#7F7F7F" size="1" face="Arial">'+ Nota +'</font><br><br>';
         }
 
-        if(Seccion.toUpperCase() === "ECO")
-        {
-          firmaeco +='<img src="'+ Imagen +'" width="14" height="14">'
-        }
+
 
       }
    }
@@ -118,8 +129,9 @@ function get_template_A_str(user_info)
 
         str+= '</td><td width="15"></td>';
         str +='<td style="padding:0 0 0 15px;border-left-style:solid;border-left-width:1pt;border-left-color:#7f7f7f">';
-        str +='<p><font size="2" face="Arial"><strong>Campus de Santiago:</strong><br>Autopista Duarte km. 1½, Santiago, R.D.';
-        str +='<br><br><strong>Campus de Santo Domingo:</strong><br>Av. Abraham Lincoln esq. Av. Simón Bolívar, Santo Domingo, R.D.</font></p></td></tr></tbody></table></td></tr><tr><td height="70" align="left" valign="middle">';
+        str +='<p><font size="2" face="Arial">';
+        str += firmadir;
+        str +='</font></p></td></tr></tbody></table></td></tr><tr><td height="70" align="left" valign="middle">';
         str +='<table border="0" cellpadding="0" cellspacing="0"><tbody><tr><td style="width:auto; height:auto;">';
         
         str += firmabanner;

@@ -226,6 +226,11 @@ function get_command_id() {
           firmalogo +='<a href="'+ Enlace +'"> <img src="'+ Imagen +'" alt="'+ textoAlt +'" width="258" height="87"></a>';
         
         }
+        
+        if(Seccion.toUpperCase() === "DIRECCION")
+        {
+          firmadir +='<strong>'+textoAlt+'</strong><br>'+ Nota +'<br><br>';
+        }
 
         if(Seccion.toUpperCase() === "BANNER")
         {
@@ -248,12 +253,6 @@ function get_command_id() {
           firmanota +='<font color="#7F7F7F" size="1" face="Arial">'+ Nota +'</font><br><br>';
         }
 
-        if(Seccion.toUpperCase() === "DIRECCION")
-        {
-          firmadir +='<strong>'+textoAlt+'</strong><br>'+ Nota +'<br><br>';
-        //str +='<strong>Campus de Santiago:</strong><br>Autopista Duarte km. 1½, Santiago, R.D.';
-        //str +='<br><br><strong>Campus de Santo Domingo:</strong><br>Av. Abraham Lincoln esq. Av. Simón Bolívar, Santo Domingo, R.D.';
-        }
 
       }
    }
