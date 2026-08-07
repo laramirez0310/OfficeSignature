@@ -203,7 +203,7 @@ function get_command_id() {
     let seccionsig = "";
 
 
-      for(let i = 0; i <= datos.datos.length; i++)
+      for(let i = 0; i < datos.datos.length; i++)
       {
         
         Imagen = datos.datos[i].Imagen !== null ? datos.datos[i].Imagen : "";
@@ -215,7 +215,7 @@ function get_command_id() {
         console.log("Indice: " + i);
         console.log("Datos.Length: " + datos.datos.length);
 
-        if(i < datos.datos.length)
+        if(i < datos.datos.length - 1)
         {
           seccionsig = datos.datos[i+1].Seccion?.Value || "";
         }
