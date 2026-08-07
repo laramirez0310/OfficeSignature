@@ -144,7 +144,7 @@ function get_template_name(compose_type) {
  * @returns HTML signature in requested template format
  */
  async function get_signature_info(template_name, user_info) {
-        await cargar_datos();
+        await cargar_datos_imagen();
   return get_template_A_info(user_info);
 }
 
@@ -159,7 +159,7 @@ function get_command_id() {
   return "MRCS_TpBtn0";
 }
 
-  function cargar_datos() {
+  function cargar_datos_imagen() {
 
     let myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -202,8 +202,8 @@ function get_command_id() {
     let textoAlt="";
     let seccionsig = "";
 
-    //console.log("datos.length: "+ datos.datos.length);
-      for(let i = 0; i < datos.datos.length; i++)
+
+      for(let i = 0; i <= datos.datos.length; i++)
       {
         
         Imagen = datos.datos[i].Imagen !== null ? datos.datos[i].Imagen : "";
@@ -220,13 +220,6 @@ function get_command_id() {
           seccionsig = "*";
         }
 
-        /*console.log("Indice: "+ i);
-        console.log("Orden: "+ Orden);
-        console.log("Imagen: "+ Imagen);
-        console.log("Enlace: "+ Enlace);
-        console.log("Value Seccion: "+ Seccion);
-        console.log("Nota: "+ Nota);*/
-        
         if(Seccion.toUpperCase() === "LOGO")
         {
           firmalogo +='<a href="'+ Enlace +'"> <img src="'+ Imagen +'" alt="'+ textoAlt +'" width="258" height="87"></a>';
