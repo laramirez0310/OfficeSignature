@@ -10,9 +10,6 @@ let _phone_number;
 let _email_id;
 let _greeting_text;
 let _tipourl;
-let _InfoAd1;
-let _InfoAd2;
-let _InfoAd3;
 let _InfoAd = [];
 let _preferred_pronoun;
 let _message;
@@ -35,9 +32,6 @@ function on_initialization_complete()
       _job_title = $("input#job_title");
       _phone_number = $("input#phone_number");
       _greeting_text = $("input#greeting_text");
-      /*_InfoAd1 = $("input#InfoAd1");
-      _InfoAd2 = $("input#InfoAd2");
-      _InfoAd3 = $("input#InfoAd3");*/
       _InfoAd = [];
 
 
@@ -169,9 +163,9 @@ function create_user_info()
       user_info.pronoun = "" + user_info.pronoun + "";
     }
 
-//console.log("user_info antes de guardar:", user_info);
-localStorage.setItem('user_info', JSON.stringify(user_info));
-//console.log("guardado en localStorage:", localStorage.getItem('user_info'));
+    //console.log("user_info antes de guardar:", user_info);
+    localStorage.setItem('user_info', JSON.stringify(user_info));
+    //console.log("guardado en localStorage:", localStorage.getItem('user_info'));
     //navigate_to_taskpane_assignsignature();
     save_signature_settings(user_info);
   }

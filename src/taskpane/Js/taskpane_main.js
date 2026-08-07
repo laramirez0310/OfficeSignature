@@ -50,7 +50,7 @@ function save_signature_settings(user_info)
 	Office.context.roamingSettings.set('override_olk_signature', $("#checkbox_sig").prop('checked'));
 
 	save_user_settings_to_roaming_settings();
-
+	Template_A();
 	disable_client_signatures_if_necessary();
 	$("#message-successful").show("slow");
   }
@@ -106,6 +106,13 @@ function insert_signature(str)
   {
 	set_signature(str);
   }
+}
+
+function Template_A()
+{
+	let str = get_template_A_str(_user_info);
+
+	insert_signature(str);
 }
 
 
