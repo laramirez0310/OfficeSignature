@@ -211,7 +211,9 @@ function get_command_id() {
         Seccion = datos.datos[i].Seccion?.Value || "";
         Nota = datos.datos[i].Nota !== null ? datos.datos[i].Nota : "";
         textoAlt = datos.datos[i].Texto_alternativo !== null ? datos.datos[i].Texto_alternativo : "";
+
         console.log("Indice: " + i);
+        console.log("Datos.Length: " + datos.datos.length);
 
         if(i < datos.datos.length)
         {
