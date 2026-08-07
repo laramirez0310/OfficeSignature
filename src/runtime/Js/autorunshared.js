@@ -200,7 +200,7 @@ function get_command_id() {
     let Seccion = "";
     let Nota = "";
     let textoAlt="";
-   
+    let seccionsig = "";
 
     //console.log("datos.length: "+ datos.datos.length);
       for(let i = 0; i < datos.datos.length; i++)
@@ -211,7 +211,14 @@ function get_command_id() {
         Seccion = datos.datos[i].Seccion?.Value || "";
         Nota = datos.datos[i].Nota !== NULL ? datos.datos[i].Nota : "";
         textoAlt = datos.datos[i].Texto_alternativo !== NULL ? datos.datos[i].Texto_alternativo : "";
-
+        if(i !== datos.datos.length)
+        {
+          seccionsig = datos.datos[i+1].Seccion?.Value || "";
+        }
+        else 
+        {
+          seccionsig = "*";
+        }
 
         /*console.log("Indice: "+ i);
         console.log("Orden: "+ Orden);
@@ -228,7 +235,9 @@ function get_command_id() {
         
         if(Seccion.toUpperCase() === "DIRECCION")
         {
-          firmadir +='<strong>'+textoAlt+'</strong><br>'+ Nota +'<br><br>';
+          firmadir +='<strong>'+textoAlt+'</strong><br>'+ Nota
+          if(Seccion.toUpperCase() === seccionsig.toUpperCase())
+            firmadir += '<br><br>' ;
         }
 
         if(Seccion.toUpperCase() === "BANNER")
@@ -249,7 +258,9 @@ function get_command_id() {
 
         if(Seccion.toUpperCase() === "NOTA")
         {
-          firmanota +='<font color="#7F7F7F" size="1" face="Arial">'+ Nota +'</font><br><br>';
+          firmanota +='<font color="#7F7F7F" size="1" face="Arial">'+ Nota +'</font>'
+           if(Seccion.toUpperCase() === seccionsig.toUpperCase())
+            firmanota += '<br><br>';
         }
 
 
