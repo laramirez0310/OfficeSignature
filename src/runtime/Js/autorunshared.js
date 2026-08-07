@@ -159,7 +159,7 @@ function get_command_id() {
   return "MRCS_TpBtn0";
 }
 
-  function cargar_datos_imagen() {
+ /* function cargar_datos_imagen() {
 
     let myHeaders = new Headers();
     myHeaders.append("Content-Type", "application/json");
@@ -177,7 +177,7 @@ function get_command_id() {
         .then(result => { dataFirma(result) }) 
         .catch(error => console.log('error', error));
     
-  }
+  }*/
 
   
   let firmasocial="";
@@ -187,7 +187,7 @@ function get_command_id() {
   let firmaeco="";
   let firmadir="";
 
-  function dataFirma(datos) {
+  /*function dataFirma(datos) {
     firmasocial="";
     firmalogo="";
     firmabanner="";
@@ -212,9 +212,6 @@ function get_command_id() {
         Nota = datos.datos[i].Nota !== null ? datos.datos[i].Nota : "";
         textoAlt = datos.datos[i].Texto_alternativo !== null ? datos.datos[i].Texto_alternativo : "";
 
-        console.log("Indice: " + i);
-        console.log("Datos.Length: " + datos.datos.length);
-
         if(i < datos.datos.length - 1)
         {
           seccionsig = datos.datos[i+1].Seccion?.Value || "";
@@ -223,9 +220,6 @@ function get_command_id() {
         {
           seccionsig = "*";
         }
-
-        console.log("Orden: " + datos.datos[i].Orden);
-        console.log("Seccionsig: " + seccionsig);
 
         if(Seccion.toUpperCase() === "LOGO")
         {
@@ -265,7 +259,7 @@ function get_command_id() {
 
 
       }
-   }
+   }*/
 
 
 
