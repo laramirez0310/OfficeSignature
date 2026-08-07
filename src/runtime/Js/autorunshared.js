@@ -203,7 +203,7 @@ function get_command_id() {
     let seccionsig = "";
 
 
-      for(let i = 0; i <= datos.datos.length; i++)
+      for(let i = 1; i <= datos.datos.length; i++)
       {
         
         Imagen = datos.datos[i].Imagen !== null ? datos.datos[i].Imagen : "";
@@ -224,6 +224,7 @@ function get_command_id() {
           seccionsig = "*";
         }
 
+        console.log("Orden: " + datos.datos[i].Orden);
         console.log("Seccionsig: " + seccionsig);
 
         if(Seccion.toUpperCase() === "LOGO")
