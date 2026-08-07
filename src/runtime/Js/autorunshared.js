@@ -211,7 +211,7 @@ function get_command_id() {
         Seccion = datos.datos[i].Seccion?.Value || "";
         Nota = datos.datos[i].Nota !== null ? datos.datos[i].Nota : "";
         textoAlt = datos.datos[i].Texto_alternativo !== null ? datos.datos[i].Texto_alternativo : "";
-        if(i !== datos.datos.length)
+        if(i < datos.datos.length)
         {
           seccionsig = datos.datos[i+1].Seccion?.Value || "";
         }
