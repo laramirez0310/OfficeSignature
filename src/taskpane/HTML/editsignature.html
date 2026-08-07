@@ -13,10 +13,8 @@
   <script type="text/javascript" src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
   <script type="text/javascript" src="https://laramirez0310.github.io/OfficeSignature/src/utilities.js"></script>
   <script type="text/javascript" src="https://laramirez0310.github.io/OfficeSignature/src/taskpane/Js/taskpane_render.js"></script>
-  <!--<script type="module" src="https://laramirez0310.github.io/OfficeSignature/src/taskpane/Js/taskpane_render.js"></script>-->
-  <script type="text/javascript" src="https://laramirez0310.github.io/OfficeSignature/src/taskpane/Js/signature_templates.js"></script>
   <script type="text/javascript" src="https://laramirez0310.github.io/OfficeSignature/src/taskpane/Js/taskpane_main.js"></script>
-  <!--<script type="module" src="https://laramirez0310.github.io/OfficeSignature/src/taskpane/Js/taskpane_main.js"></script>-->
+
 </head>
  
 <body>  
@@ -70,30 +68,6 @@
   let InfoAd3 = document.querySelector('#InfoAd3');
   let GrdoAcad = document.querySelector('#GrdoAcad');
 
-/*  function cargar_datos() {
-
-    correo = document.querySelector('#email_id').value;
-
-    let myHeaders = new Headers();
-    myHeaders.append("Content-Type", "application/json");
-
-    let raw = JSON.stringify({
-      "email": correo
-    });
-
-    let requestOptions = {
-      method: 'POST',
-      headers: myHeaders,
-      body: raw,
-      redirect: 'follow'
-    };
-      //fetch("https://default73c9a419863d4226a83f7a200ad69b.e9.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/b3fca9c7e1914b7da3b13e5a8b48e725/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=O8m_jD2mbYieLNTqpOgelWzWz5BF6nQyM3b4E_mnYuA", requestOptions)
-      fetch("https://default73c9a419863d4226a83f7a200ad69b.e9.environment.api.powerplatform.com:443/powerautomate/automations/direct/workflows/e417bb666c274a6cabf24c86eee62518/triggers/manual/paths/invoke?api-version=1&sp=%2Ftriggers%2Fmanual%2Frun&sv=1.0&sig=dyHmpkuTEBBwP4EEto8t2ZmQbA_dJ48q0tvAJ10vTYo", requestOptions)        
-      .then(response => response.json())
-        .then(result => { dataUser(result) })
-        .catch(error => console.log('error', error));
-    
-  }*/
 
   function dataUser(datos) {
       let divInfoAdicional = document.querySelector('#dvInfoAdicional');
@@ -131,27 +105,10 @@
           }
       }
 
-      /*InfoAd1.value = datos.DatoAd1;
-      InfoAd2.value = datos.DatoAd2;
-      InfoAd3.value = datos.DatoAd3;
-      GrdoAcad.value = datos.GrdoAcad;*/
 
       divInfoAdicional.style.display = ExisteInfoAdicional ? 'block' : 'none';
 
-
-      //div_datos_adicionales();
     }
-
-    function div_datos_adicionales(){
-      let divInfoAdicional = document.querySelector('#dvInfoAdicional');
-      //Si hay un valor, se muestra el div, de lo contrario, se oculta
-      if(InfoAd1.value.trim() != '' || InfoAd2.value.trim() != '' || InfoAd3.value.trim() != ''){
-        divInfoAdicional.style.display = 'block';
-      }else{
-        divInfoAdicional.style.display = 'none';
-      }
-    }
-
   
 </script>
 </html>
