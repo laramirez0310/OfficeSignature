@@ -4,8 +4,6 @@
 // Contains code for event-based activation on both Outlook on web and Outlook on Windows.
 
 
-//import { save_signature_settings } from "./taskpane_main.js";
-import { cargar_datos_imagen } from "./utilities.js";
 
 /**
  * Checks if signature exists.
