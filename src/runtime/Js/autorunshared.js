@@ -180,12 +180,12 @@ function get_command_id() {
   }
 
   
-  export let firmasocial="";
-  export let firmalogo="";
-  export let firmabanner="";
-  export let firmanota="";
-  export let firmaeco="";
-  export let firmadir="";
+  let firmasocial="";
+  let firmalogo="";
+  let firmabanner="";
+  let firmanota="";
+  let firmaeco="";
+  let firmadir="";
 
   function dataFirma(datos) {
     firmasocial="";

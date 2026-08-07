@@ -1,6 +1,14 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
- import{ firmasocial, firmalogo, firmabanner, firmanota, firmaeco, firmadir } from '../../runtime/Js/autorunshared.js';
+
+  
+  let firmasocial="";
+  let firmalogo="";
+  let firmabanner="";
+  let firmanota="";
+  let firmaeco="";
+  let firmadir="";
+  
 
 
 function get_template_A_str(user_info)

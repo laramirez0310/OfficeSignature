@@ -2,7 +2,7 @@
 // Licensed under the MIT License.
 
 //import { save_signature_settings } from "./taskpane_main.js";
-import { cargar_datos_imagen} from "./autorunshared.js";
+
 
 let _display_name;
 let _job_title;
