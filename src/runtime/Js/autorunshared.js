@@ -180,12 +180,12 @@ function get_command_id() {
   }
 
   
-  let firmasocial="";
-  let firmalogo="";
-  let firmabanner="";
-  let firmanota="";
-  let firmaeco="";
-  let firmadir="";
+  export let firmasocial="";
+  export let firmalogo="";
+  export let firmabanner="";
+  export let firmanota="";
+  export let firmaeco="";
+  export let firmadir="";
 
   function dataFirma(datos) {
     firmasocial="";
@@ -203,7 +203,7 @@ function get_command_id() {
     let seccionsig = "";
 
 
-      for(let i = 1; i <= datos.datos.length; i++)
+      for(let i = 0; i <= datos.datos.length; i++)
       {
         
         Imagen = datos.datos[i].Imagen !== null ? datos.datos[i].Imagen : "";
