@@ -194,7 +194,7 @@ function get_command_id() {
     firmanota="";
     firmaeco="";
     firmadir="";
-    let Orden = 0.0;
+
     let Imagen = "";      
     let Enlace = "";
     let Seccion = "";
@@ -206,12 +206,11 @@ function get_command_id() {
       for(let i = 0; i < datos.datos.length; i++)
       {
         
-        Orden = datos.datos[i].Orden;
-        Imagen = datos.datos[i].Imagen;      
-        Enlace = datos.datos[i].Enlace;
+        Imagen = datos.datos[i].Imagen !== NULL ? datos.datos[i].Imagen : "";
+        Enlace = datos.datos[i].Enlace !== NULL ? datos.datos[i].Enlace : "";
         Seccion = datos.datos[i].Seccion?.Value || "";
-        Nota = datos.datos[i].Nota;
-        textoAlt = datos.datos[i].Texto_alternativo;
+        Nota = datos.datos[i].Nota !== NULL ? datos.datos[i].Nota : "";
+        textoAlt = datos.datos[i].Texto_alternativo !== NULL ? datos.datos[i].Texto_alternativo : "";
 
 
         /*console.log("Indice: "+ i);

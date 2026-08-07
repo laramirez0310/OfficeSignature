@@ -37,7 +37,7 @@
     firmanota="";
     firmadir="";
 
-    let Orden = 0.0;
+
     let Imagen = "";      
     let Enlace = "";
     let Seccion = "";
@@ -47,7 +47,6 @@
       for(let i = 0; i < datos.datos.length; i++)
       {
         
-        Orden = datos.datos[i].Orden;
         Imagen = datos.datos[i].Imagen;      
         Enlace = datos.datos[i].Enlace;
         Seccion = datos.datos[i].Seccion?.Value || "";
