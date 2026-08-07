@@ -206,11 +206,11 @@ function get_command_id() {
       for(let i = 0; i < datos.datos.length; i++)
       {
         
-        Imagen = datos.datos[i].Imagen !== NULL ? datos.datos[i].Imagen : "";
-        Enlace = datos.datos[i].Enlace !== NULL ? datos.datos[i].Enlace : "";
+        Imagen = datos.datos[i].Imagen !== null ? datos.datos[i].Imagen : "";
+        Enlace = datos.datos[i].Enlace !== null ? datos.datos[i].Enlace : "";
         Seccion = datos.datos[i].Seccion?.Value || "";
-        Nota = datos.datos[i].Nota !== NULL ? datos.datos[i].Nota : "";
-        textoAlt = datos.datos[i].Texto_alternativo !== NULL ? datos.datos[i].Texto_alternativo : "";
+        Nota = datos.datos[i].Nota !== null ? datos.datos[i].Nota : "";
+        textoAlt = datos.datos[i].Texto_alternativo !== null ? datos.datos[i].Texto_alternativo : "";
         if(i !== datos.datos.length)
         {
           seccionsig = datos.datos[i+1].Seccion?.Value || "";
