@@ -1,14 +1,6 @@
 // Copyright (c) Microsoft Corporation.
 // Licensed under the MIT License.
-
-  
-  let firmasocial="";
-  let firmalogo="";
-  let firmabanner="";
-  let firmanota="";
-  let firmaeco="";
-  let firmadir="";
-  
+ 
 
 
 function get_template_A_str(user_info)
