@@ -212,6 +212,7 @@ function get_command_id() {
         Nota = datos.datos[i].Nota !== null ? datos.datos[i].Nota : "";
         textoAlt = datos.datos[i].Texto_alternativo !== null ? datos.datos[i].Texto_alternativo : "";
         console.log("Indice: " + i);
+
         if(i < datos.datos.length)
         {
           seccionsig = datos.datos[i+1].Seccion?.Value || "";
@@ -220,6 +221,8 @@ function get_command_id() {
         {
           seccionsig = "*";
         }
+
+        console.log("Seccionsig: " + seccionsig);
 
         if(Seccion.toUpperCase() === "LOGO")
         {
