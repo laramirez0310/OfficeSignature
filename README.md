@@ -1,4 +1,4 @@
-# Firma para los correos para Office
+# Aplicación de Firma para los correos
 
 ## Se aplica a
 - Outlook
