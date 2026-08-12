@@ -50,9 +50,8 @@ function save_signature_settings(user_info)
 	Office.context.roamingSettings.set('override_olk_signature', $("#checkbox_sig").prop('checked'));
 
 	save_user_settings_to_roaming_settings();
-
+	Template_A();
 	disable_client_signatures_if_necessary();
-	test_template_A();
 	$("#message-successful").show("slow");
   }
   else
@@ -109,31 +108,13 @@ function insert_signature(str)
   }
 }
 
-function test_template_A()
+function Template_A()
 {
 	let str = get_template_A_str(_user_info);
-	//let str = get_template_A_info(_user_info);
-	console.log("test_template_A_str - " + str);
 
 	insert_signature(str);
 }
 
-
-function test_template_B()
-{
-	let str = get_template_B_str(_user_info);
-	//console.log("test_template_B - " + str);
-
-	insert_signature(str);
-}
-
-function test_template_C()
-{
-	let str = get_template_C_str(_user_info);
-	//console.log("test_template_C - " + str);
-
-	insert_signature(str);
-}
 
 function navigate_to_taskpane2()
 {
