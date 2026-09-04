@@ -52,8 +52,6 @@ function prepopulate_from_userprofile()
 {
   _display_name.val(Office.context.mailbox.userProfile.displayName);
   _email_id.val(Office.context.mailbox.userProfile.emailAddress);
-  /*_job_title.val(Office.context.mailbox.userProfile.jobTitle);
-  _phone_number.val(Office.context.MailboxEnums.EntityType.PhoneNumber);*/
  
 }
 
@@ -68,12 +66,6 @@ function load_saved_user_info()
   if (user_info_str)
   {
     const user_info = JSON.parse(user_info_str);
-    /*_display_name.val(user_info.name);
-    _email_id.val(user_info.email);
-    _job_title.val(user_info.job);
-    _phone_number.val(user_info.phone);*/
-    //_greeting_text.val(user_info.greeting);
-    //_tipourl.val(user_info.tipourl);
 
       console.log("Antes de cargar los datos:", _InfoAd);
     _InfoAd.forEach(function($input, idx)

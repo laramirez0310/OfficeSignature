@@ -198,68 +198,6 @@ function get_command_id() {
   };
 }
 
-//export {get_template_A_info};
-
-/**
- * Gets HTML string for template B
- * References the signature logo image from the HTML
- * @param {*} user_info Information details about the user
- * @returns Object containing:
- *  "signature": The signature HTML of template B,
-    "logoBase64": null since this template references the image and does not embed it ,
-    "logoFileName": null since this template references the image and does not embed it
- */
-function get_template_B_info(user_info) {
-  let str = "";
-  if (is_valid_data(user_info.greeting)) {
-    str += user_info.greeting + "<br/>";
-  }
-
-  str += "<table>";
-  str += "<tr>";
-  // Reference the logo using a URI to the web server <img src='https://...
-  str +=
-    "<td style='border-right: 1px solid #000000; padding-right: 5px;'><img src='https://www.pucmm.edu.do/PublishingImages/firma-addin/logoFirma.jpg' alt='Logo' /></td>";
-  str += "<td style='padding-left: 5px;'>";
-  str += "<strong>" + user_info.name + "</strong>";
-  str += is_valid_data(user_info.pronoun) ? "&nbsp;" + user_info.pronoun : "";
-  str += "<br/>";
-  str += user_info.email + "<br/>";
-  str += is_valid_data(user_info.phone) ? user_info.phone + "<br/>" : "";
-  str += "</td>";
-  str += "</tr>";
-  str += "</table>";
-
-  return {
-    signature: str,
-    logoBase64: null,
-    logoFileName: null,
-  };
-}
-
-/**
- * Gets HTML string for template C
- * @param {*} user_info Information details about the user
- * @returns Object containing:
- *  "signature": The signature HTML of template C,
-    "logoBase64": null since there is no image,
-    "logoFileName": null since there is no image
- */
-function get_template_C_info(user_info) {
-  let str = "";
-  if (is_valid_data(user_info.greeting)) {
-    str += user_info.greeting + "<br/>";
-  }
-
-  str += user_info.name;
-
-  return {
-    signature: str,
-    logoBase64: null,
-    logoFileName: null,
-  };
-}
-
 /**
  * Validates if str parameter contains text.
  * @param {*} str String to validate
