@@ -24,15 +24,17 @@
       2. Haga clic en el botón guardar para salvar la información.
     </p>
 
-    <input type="text" id="display_name" placeholder="Name*" readonly onclick="this.select()" required />
+    <input type="text" id="display_name" placeholder="Nombres y Apellidos" readonly onclick="this.select()" required />
 
-    <input type="email" id="email_id" placeholder="Email address*" readonly onclick="this.select()" required />
+    <input type="email" id="email_id" placeholder="Correo Electrónico" readonly onclick="this.select()" required />
 
     <input type="text" id="job_title" placeholder="Puesto" readonly />
 
-    <input type="text" id="phone_number" placeholder="Phone number" readonly/>
+    <input type="text" id="phone_number" placeholder="Extensión" readonly/>
 
-    <input type="text" placeholder="Dependencia" id="preferred_pronoun" readonly />
+    <input type="text" id="cellphone_number" placeholder="Flota" readonly/>
+
+    <input type="text" id="preferred_pronoun" placeholder="Departamento" readonly />
 
     <!--<input type="text" placeholder="Prueba URL" id="greeting_text" readonly />-->
     <div style="display: none;" id="dvInfoAdicional">
@@ -62,6 +64,7 @@
   let nombre = document.querySelector('#display_name');  
   let cargo = document.querySelector('#job_title');
   let tel = document.querySelector('#phone_number');
+  let celular = document.querySelector('#cellphone_number');
   let unidad = document.querySelector('#preferred_pronoun');
   let GrdoAcad = document.querySelector('#GrdoAcad');
 
@@ -80,6 +83,7 @@
 
       }
       
+      celular.value = datos.cellphone;
       unidad.value = datos.department;
 
       const Campos = 15;

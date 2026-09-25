@@ -145,6 +145,7 @@ function get_cal_offset()
         str += is_valid_data(user_info.pronoun) ? "<strong>" + user_info.pronoun : "";
         str += '</strong></font><br><font size="2" face="Arial">Tel.:';
         str += is_valid_data(user_info.phone) ? user_info.phone + "<br/>" : "";
+        str += is_valid_data(user_info.cellphone) ? "Cel.:" + user_info.cellphone + "</br>": "";
         str += user_info.email;
         str += '<br>';
 

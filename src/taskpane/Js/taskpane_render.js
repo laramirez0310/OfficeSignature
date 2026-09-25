@@ -31,6 +31,7 @@ function on_initialization_complete()
       _email_id = $("input#email_id");
       _job_title = $("input#job_title");
       _phone_number = $("input#phone_number");
+      _cellphone_number = $("input#cellphone_number");
       _greeting_text = $("input#greeting_text");
       _InfoAd = [];
 
@@ -135,6 +136,7 @@ function create_user_info()
     user_info.email = email;
     user_info.job =  _job_title.val().trim();
     user_info.phone = _phone_number.val().trim();
+    user_info.cellphone = _cellphone_number.val().trim();
     user_info.pronoun = _preferred_pronoun.val().trim();
 
   
@@ -170,6 +172,7 @@ function clear_all_fields()
   _email_id.val("");
   _job_title.val("");
   _phone_number.val("");
+  _cellphone_number.val("");
   _greeting_text.val("");
   _preferred_pronoun.val("");
 }
