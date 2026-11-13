@@ -115,6 +115,7 @@
               <LaunchEvents>
 
                 <LaunchEvent Type="OnNewMessageCompose" FunctionName="checkSignature"/>
+                <LaunchEvent Type="OnNewAppointmentOrganizer" FunctionName="checkSignature" />
 
               </LaunchEvents>
 
